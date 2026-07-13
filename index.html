@@ -10,10 +10,10 @@
 
   <meta
     name="description"
-    content="Official website for the webseries and comic."
+    content="kekgirl.lol — music production and beat commissions."
   >
 
-  <title>series title</title>
+  <title>kekgirl.lol</title>
 
   <link rel="icon" href="assets/favicon.png">
 
@@ -28,10 +28,19 @@
 
     body {
       margin: 0;
-      background: #f4f4f2;
-      color: #222222;
+      background: #f4f4f4;
+      color: #111;
       font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
       line-height: 1.6;
+    }
+
+    a {
+      color: #111;
+    }
+
+    a:hover {
+      color: #666;
     }
 
     img {
@@ -39,804 +48,537 @@
       max-width: 100%;
     }
 
-    a {
-      color: inherit;
-    }
-
-    .site-wrapper {
-      width: min(1100px, calc(100% - 40px));
+    .container {
+      width: min(950px, calc(100% - 40px));
       margin: 0 auto;
     }
 
     header {
-      background: #ffffff;
-      border-bottom: 1px solid #d5d5d0;
+      padding: 60px 0 40px;
+      border-bottom: 1px solid #ccc;
+      background: white;
     }
 
-    .header-inner {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
+    header h1 {
+      margin: 0;
+      font-size: clamp(2.8rem, 8vw, 5rem);
+      font-weight: 500;
+      letter-spacing: -3px;
     }
 
-    .logo {
-      color: #1f1f1f;
-      font-size: 1.15rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-decoration: none;
-      text-transform: uppercase;
+    header p {
+      max-width: 650px;
+      margin: 15px 0 0;
+      color: #555;
+      font-size: 1.1rem;
     }
 
     nav {
+      border-bottom: 1px solid #ccc;
+      background: white;
+    }
+
+    nav .container {
       display: flex;
-      align-items: center;
-      gap: 22px;
+      flex-wrap: wrap;
+      gap: 25px;
+      padding-top: 15px;
+      padding-bottom: 15px;
     }
 
     nav a {
-      color: #555555;
-      font-size: 0.9rem;
       text-decoration: none;
     }
 
     nav a:hover {
-      color: #000000;
+      text-decoration: underline;
     }
 
-    .hero {
-      padding: 90px 0;
-      border-bottom: 1px solid #d5d5d0;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      align-items: center;
-      gap: 60px;
-    }
-
-    .eyebrow {
-      margin: 0 0 14px;
-      color: #6c6c68;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      max-width: 700px;
-      margin: 0;
-      color: #1a1a1a;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      font-weight: 400;
-      letter-spacing: -0.055em;
-      line-height: 0.95;
-    }
-
-    .hero-description {
-      max-width: 600px;
-      margin: 28px 0 0;
-      color: #555555;
-      font-size: 1.05rem;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 32px;
-    }
-
-    .button {
-      display: inline-flex;
-      min-height: 46px;
-      align-items: center;
-      justify-content: center;
-      padding: 0 20px;
-      border: 1px solid #222222;
-      background: #222222;
-      color: #ffffff;
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition:
-        background 0.2s ease,
-        color 0.2s ease;
-    }
-
-    .button:hover {
-      background: #444444;
-    }
-
-    .button.secondary {
-      background: transparent;
-      color: #222222;
-    }
-
-    .button.secondary:hover {
-      background: #e6e6e2;
-    }
-
-    .hero-image {
-      min-height: 500px;
-      overflow: hidden;
-      background: #deded8;
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      min-height: 500px;
-      object-fit: cover;
+    main {
+      background: white;
     }
 
     section {
-      padding: 85px 0;
-      border-bottom: 1px solid #d5d5d0;
-    }
-
-    .section-heading {
-      display: grid;
-      grid-template-columns: 0.35fr 1fr;
-      gap: 40px;
-      margin-bottom: 45px;
-    }
-
-    .section-number {
-      color: #888883;
-      font-size: 0.8rem;
-      letter-spacing: 0.1em;
+      padding: 55px 0;
+      border-bottom: 1px solid #ddd;
     }
 
     h2 {
-      margin: 0;
-      color: #1f1f1f;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.1rem, 5vw, 4rem);
-      font-weight: 400;
-      letter-spacing: -0.035em;
-      line-height: 1;
+      margin: 0 0 25px;
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      grid-template-columns: 1.4fr 0.6fr;
+      gap: 40px;
+      align-items: start;
     }
 
-    .about-grid p {
-      margin-top: 0;
-      color: #555555;
+    .profile-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border: 1px solid #ccc;
+      object-fit: cover;
+      background: #eee;
     }
 
-    .info-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      border-top: 1px solid #c9c9c4;
+    .service-list {
+      display: grid;
+      gap: 15px;
     }
 
-    .info-list li {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 15px 0;
-      border-bottom: 1px solid #c9c9c4;
+    .service {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 25px;
+      padding: 20px;
+      border: 1px solid #ccc;
     }
 
-    .info-label {
-      color: #777772;
+    .service p {
+      margin: 8px 0 0;
+      color: #555;
     }
 
-    .content-grid {
+    .price {
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .music-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-    }
-
-    .content-card {
-      background: #ffffff;
-      border: 1px solid #d3d3ce;
-    }
-
-    .content-card-image {
-      aspect-ratio: 16 / 10;
-      overflow: hidden;
-      background: #dfdfda;
-    }
-
-    .content-card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.25s ease;
-    }
-
-    .content-card:hover .content-card-image img {
-      transform: scale(1.02);
-    }
-
-    .content-card-body {
-      padding: 25px;
-    }
-
-    .content-card-type {
-      margin: 0 0 10px;
-      color: #777772;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .content-card h3 {
-      margin: 0;
-      color: #222222;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.65rem;
-      font-weight: 400;
-    }
-
-    .content-card p {
-      margin: 12px 0 20px;
-      color: #666661;
-    }
-
-    .text-link {
-      font-size: 0.88rem;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .text-link:hover {
-      text-decoration: underline;
-    }
-
-    .episodes {
-      display: grid;
-      gap: 1px;
-      overflow: hidden;
-      border: 1px solid #d1d1cc;
-      background: #d1d1cc;
-    }
-
-    .episode {
-      display: grid;
-      grid-template-columns: 90px 1fr auto;
-      align-items: center;
-      gap: 25px;
-      padding: 24px;
-      background: #ffffff;
-      text-decoration: none;
-      transition: background 0.2s ease;
-    }
-
-    .episode:hover {
-      background: #ededE9;
-    }
-
-    .episode-number {
-      color: #777772;
-      font-size: 0.82rem;
-      letter-spacing: 0.08em;
-    }
-
-    .episode h3 {
-      margin: 0;
-      font-size: 1rem;
-    }
-
-    .episode p {
-      margin: 4px 0 0;
-      color: #777772;
-      font-size: 0.88rem;
-    }
-
-    .episode-arrow {
-      color: #777772;
-      font-size: 1.2rem;
-    }
-
-    .characters-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 20px;
     }
 
-    .character {
+    .track {
       padding: 20px;
-      background: #ffffff;
-      border: 1px solid #d3d3ce;
+      border: 1px solid #ccc;
     }
 
-    .character-image {
-      aspect-ratio: 4 / 5;
-      margin-bottom: 20px;
-      overflow: hidden;
-      background: #deded8;
+    .track h3 {
+      margin-bottom: 8px;
     }
 
-    .character-image img {
+    .track p {
+      margin: 0 0 15px;
+      color: #555;
+    }
+
+    audio {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
     }
 
-    .character h3 {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.4rem;
-      font-weight: 400;
+    .process-list {
+      padding-left: 22px;
     }
 
-    .character p {
-      margin: 8px 0 0;
-      color: #666661;
-      font-size: 0.9rem;
+    .process-list li {
+      margin-bottom: 12px;
+    }
+
+    .terms {
+      padding: 20px;
+      border: 1px solid #ccc;
+      background: #fafafa;
+    }
+
+    .terms p {
+      margin-top: 0;
     }
 
     .contact-box {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 40px;
-      padding: 45px;
-      background: #222222;
-      color: #ffffff;
+      padding: 25px;
+      border: 1px solid #bbb;
+      background: #f7f7f7;
     }
 
-    .contact-box h2 {
-      color: #ffffff;
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
     }
 
-    .contact-box p {
-      max-width: 650px;
-      margin: 18px 0 0;
-      color: #cfcfca;
+    .contact-links a {
+      display: inline-block;
+      padding: 9px 15px;
+      border: 1px solid #111;
+      background: white;
+      text-decoration: none;
     }
 
-    .contact-box .button {
-      border-color: #ffffff;
-      background: #ffffff;
-      color: #222222;
-    }
-
-    .contact-box .button:hover {
-      background: #deded8;
+    .contact-links a:hover {
+      color: white;
+      background: #111;
     }
 
     footer {
       padding: 30px 0;
-      background: #ffffff;
+      background: #f4f4f4;
+      color: #555;
+      text-align: center;
+      font-size: 0.9rem;
     }
 
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      color: #777772;
-      font-size: 0.82rem;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 16px;
-    }
-
-    .footer-links a {
-      text-decoration: none;
-    }
-
-    .footer-links a:hover {
-      color: #222222;
-    }
-
-    @media (max-width: 850px) {
-      .hero {
-        padding: 60px 0;
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 24px, 950px);
       }
 
-      .hero-grid,
-      .about-grid,
-      .contact-box {
-        grid-template-columns: 1fr;
+      header {
+        padding: 40px 0 30px;
       }
 
-      .hero-grid {
-        gap: 40px;
+      header h1 {
+        letter-spacing: -2px;
       }
 
-      .hero-image,
-      .hero-image img {
-        min-height: 380px;
-      }
-
-      .section-heading {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      .characters-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .contact-box {
-        align-items: start;
-      }
-    }
-
-    @media (max-width: 620px) {
-      .site-wrapper {
-        width: min(100% - 24px, 1100px);
-      }
-
-      .header-inner {
-        min-height: auto;
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 18px 0;
-      }
-
-      nav {
-        width: 100%;
-        gap: 8px 18px;
-        overflow-x: auto;
-        padding-bottom: 3px;
-      }
-
-      nav a {
-        flex-shrink: 0;
+      nav .container {
+        gap: 15px;
       }
 
       section {
-        padding: 60px 0;
+        padding: 40px 0;
       }
 
-      .hero {
-        padding: 55px 0;
-      }
-
-      h1 {
-        font-size: clamp(3rem, 17vw, 5rem);
-      }
-
-      .hero-image,
-      .hero-image img {
-        min-height: 290px;
-      }
-
-      .content-grid,
-      .characters-grid {
+      .about-grid,
+      .music-grid {
         grid-template-columns: 1fr;
       }
 
-      .episode {
-        grid-template-columns: 55px 1fr;
-        gap: 15px;
-        padding: 18px;
+      .service {
+        grid-template-columns: 1fr;
+        gap: 8px;
       }
 
-      .episode-arrow {
-        display: none;
-      }
-
-      .contact-box {
-        padding: 30px 24px;
-      }
-
-      .footer-inner {
-        align-items: flex-start;
-        flex-direction: column;
+      .price {
+        white-space: normal;
       }
     }
   </style>
 </head>
 
 <body>
+  <header id="top">
+    <div class="container">
+      <h1>kekgirl.lol</h1>
 
-  <header>
-    <div class="site-wrapper header-inner">
-      <a class="logo" href="#">series title</a>
-
-      <nav aria-label="Main navigation">
-        <a href="#about">about</a>
-        <a href="#read-watch">read / watch</a>
-        <a href="#episodes">episodes</a>
-        <a href="#characters">characters</a>
-        <a href="#contact">contact</a>
-      </nav>
+      <p>
+        custom beats, instrumentals, music production and audio commissions.
+      </p>
     </div>
   </header>
 
+  <nav>
+    <div class="container">
+      <a href="#about">about</a>
+      <a href="#services">services</a>
+      <a href="#examples">examples</a>
+      <a href="#process">process</a>
+      <a href="#terms">terms</a>
+      <a href="#contact">contact</a>
+    </div>
+  </nav>
+
   <main>
-
-    <section class="hero">
-      <div class="site-wrapper hero-grid">
-
-        <div>
-          <p class="eyebrow">an original webseries and comic</p>
-
-          <h1>series title</h1>
-
-          <p class="hero-description">
-            Add a short introduction to your story here. Describe the
-            setting, main conflict, or overall mood without revealing too
-            much.
-          </p>
-
-          <div class="hero-buttons">
-            <a class="button" href="#read-watch">read the comic</a>
-            <a class="button secondary" href="#episodes">watch the series</a>
-          </div>
-        </div>
-
-        <div class="hero-image">
-          <img
-            src="assets/hero-image.jpg"
-            alt="Promotional artwork for series title"
-          >
-        </div>
-
-      </div>
-    </section>
-
     <section id="about">
-      <div class="site-wrapper">
-
-        <div class="section-heading">
-          <span class="section-number">01</span>
-          <h2>about the story</h2>
-        </div>
+      <div class="container">
+        <h2>about</h2>
 
         <div class="about-grid">
-
           <div>
             <p>
-              Series Title is an original comic and webseries following a
-              group of characters as they navigate their changing lives,
-              relationships, and surroundings.
+              i produce custom music for artists, vocalists, games, videos,
+              websites and personal projects.
             </p>
 
             <p>
-              Use this section to explain the premise in more detail. You can
-              also mention how the comic and webseries connect to each other.
+              i mainly work with breakcore, hyperpop, electronic, ambient,
+              experimental and internet-inspired music, but i am open to
+              other styles.
+            </p>
+
+            <p>
+              every commission is made specifically for the client. you can
+              provide references, a mood, a genre, a tempo or a general idea.
             </p>
           </div>
 
-          <ul class="info-list">
-            <li>
-              <span class="info-label">genre</span>
-              <span>drama / comedy</span>
-            </li>
-
-            <li>
-              <span class="info-label">format</span>
-              <span>webcomic and webseries</span>
-            </li>
-
-            <li>
-              <span class="info-label">status</span>
-              <span>ongoing</span>
-            </li>
-
-            <li>
-              <span class="info-label">created by</span>
-              <span>your name</span>
-            </li>
-          </ul>
-
+          <img
+            class="profile-image"
+            src="assets/profile.jpg"
+            alt="kekgirl profile image"
+          >
         </div>
       </div>
     </section>
 
-    <section id="read-watch">
-      <div class="site-wrapper">
+    <section id="services">
+      <div class="container">
+        <h2>music commissions</h2>
 
-        <div class="section-heading">
-          <span class="section-number">02</span>
-          <h2>read and watch</h2>
-        </div>
-
-        <div class="content-grid">
-
-          <article class="content-card">
-            <div class="content-card-image">
-              <img
-                src="assets/comic-cover.jpg"
-                alt="Cover artwork for the comic"
-              >
-            </div>
-
-            <div class="content-card-body">
-              <p class="content-card-type">webcomic</p>
-              <h3>read the comic</h3>
+        <div class="service-list">
+          <article class="service">
+            <div>
+              <h3>custom beat</h3>
 
               <p>
-                Start from the beginning or continue reading the newest
-                chapter.
+                a complete original beat based on your genre, references
+                and preferred mood.
               </p>
-
-              <a class="text-link" href="#">
-                open comic →
-              </a>
             </div>
+
+            <div class="price">starting at $25</div>
           </article>
 
-          <article class="content-card">
-            <div class="content-card-image">
-              <img
-                src="assets/series-cover.jpg"
-                alt="Promotional artwork for the webseries"
-              >
-            </div>
-
-            <div class="content-card-body">
-              <p class="content-card-type">webseries</p>
-              <h3>watch the series</h3>
+          <article class="service">
+            <div>
+              <h3>full instrumental</h3>
 
               <p>
-                View released episodes, trailers, and additional videos.
+                a longer and more detailed instrumental with arrangement,
+                transitions and multiple sections.
               </p>
-
-              <a class="text-link" href="#">
-                watch episodes →
-              </a>
             </div>
+
+            <div class="price">starting at $40</div>
           </article>
 
+          <article class="service">
+            <div>
+              <h3>game or website music</h3>
+
+              <p>
+                loops, menu music, background tracks, character themes or
+                short soundtrack pieces.
+              </p>
+            </div>
+
+            <div class="price">starting at $30</div>
+          </article>
+
+          <article class="service">
+            <div>
+              <h3>intro or outro music</h3>
+
+              <p>
+                a short original track for videos, streams, podcasts or
+                social media content.
+              </p>
+            </div>
+
+            <div class="price">starting at $15</div>
+          </article>
+
+          <article class="service">
+            <div>
+              <h3>mixing</h3>
+
+              <p>
+                volume balancing, basic cleanup, effects and final mix
+                adjustments for your song.
+              </p>
+            </div>
+
+            <div class="price">starting at $20</div>
+          </article>
+
+          <article class="service">
+            <div>
+              <h3>custom request</h3>
+
+              <p>
+                contact me for unusual projects, larger soundtracks,
+                collaborations or other audio work.
+              </p>
+            </div>
+
+            <div class="price">custom quote</div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="episodes">
-      <div class="site-wrapper">
+    <section id="examples">
+      <div class="container">
+        <h2>examples</h2>
 
-        <div class="section-heading">
-          <span class="section-number">03</span>
-          <h2>latest releases</h2>
-        </div>
+        <p>
+          replace these audio files with your own songs or commission examples.
+        </p>
 
-        <div class="episodes">
+        <div class="music-grid">
+          <article class="track">
+            <h3>breakcore example</h3>
 
-          <a class="episode" href="#">
-            <span class="episode-number">01</span>
+            <p>fast drums, distorted samples and electronic melodies.</p>
 
-            <div>
-              <h3>episode or chapter title</h3>
-              <p>webseries episode · July 2026</p>
-            </div>
+            <audio controls>
+              <source
+                src="assets/music/breakcore-example.mp3"
+                type="audio/mpeg"
+              >
+            </audio>
+          </article>
 
-            <span class="episode-arrow">→</span>
-          </a>
+          <article class="track">
+            <h3>hyperpop example</h3>
 
-          <a class="episode" href="#">
-            <span class="episode-number">02</span>
+            <p>bright synths, heavy bass and energetic production.</p>
 
-            <div>
-              <h3>episode or chapter title</h3>
-              <p>comic chapter · June 2026</p>
-            </div>
+            <audio controls>
+              <source
+                src="assets/music/hyperpop-example.mp3"
+                type="audio/mpeg"
+              >
+            </audio>
+          </article>
 
-            <span class="episode-arrow">→</span>
-          </a>
+          <article class="track">
+            <h3>ambient example</h3>
 
-          <a class="episode" href="#">
-            <span class="episode-number">03</span>
+            <p>soft background music for games, videos or websites.</p>
 
-            <div>
-              <h3>episode or chapter title</h3>
-              <p>webseries episode · May 2026</p>
-            </div>
+            <audio controls>
+              <source
+                src="assets/music/ambient-example.mp3"
+                type="audio/mpeg"
+              >
+            </audio>
+          </article>
 
-            <span class="episode-arrow">→</span>
-          </a>
+          <article class="track">
+            <h3>experimental example</h3>
 
+            <p>unusual sound design, textures and abstract arrangement.</p>
+
+            <audio controls>
+              <source
+                src="assets/music/experimental-example.mp3"
+                type="audio/mpeg"
+              >
+            </audio>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="characters">
-      <div class="site-wrapper">
+    <section id="process">
+      <div class="container">
+        <h2>commission process</h2>
 
-        <div class="section-heading">
-          <span class="section-number">04</span>
-          <h2>characters</h2>
-        </div>
+        <ol class="process-list">
+          <li>
+            contact me with your idea, genre, references, budget and deadline.
+          </li>
 
-        <div class="characters-grid">
+          <li>
+            i will confirm whether i can complete the project and provide a
+            final price.
+          </li>
 
-          <article class="character">
-            <div class="character-image">
-              <img
-                src="assets/character-1.jpg"
-                alt="Character name"
-              >
-            </div>
+          <li>
+            payment is sent before i begin working unless we agree on another
+            arrangement.
+          </li>
 
-            <h3>character name</h3>
-            <p>
-              A short description of the character and their role in the
-              story.
-            </p>
-          </article>
+          <li>
+            i will send a preview or work-in-progress version for feedback.
+          </li>
 
-          <article class="character">
-            <div class="character-image">
-              <img
-                src="assets/character-2.jpg"
-                alt="Character name"
-              >
-            </div>
+          <li>
+            after revisions are finished, you will receive the final audio
+            files.
+          </li>
+        </ol>
+      </div>
+    </section>
 
-            <h3>character name</h3>
-            <p>
-              A short description of the character and their role in the
-              story.
-            </p>
-          </article>
+    <section id="terms">
+      <div class="container">
+        <h2>terms</h2>
 
-          <article class="character">
-            <div class="character-image">
-              <img
-                src="assets/character-3.jpg"
-                alt="Character name"
-              >
-            </div>
+        <div class="terms">
+          <p>
+            commissions include up to two reasonable revisions unless stated
+            otherwise.
+          </p>
 
-            <h3>character name</h3>
-            <p>
-              A short description of the character and their role in the
-              story.
-            </p>
-          </article>
+          <p>
+            major changes requested after the original idea has been approved
+            may cost extra.
+          </p>
 
+          <p>
+            commercial use must be discussed before the commission begins.
+          </p>
+
+          <p>
+            clients may not claim that they personally produced the music.
+          </p>
+
+          <p>
+            i may share finished work in my portfolio unless private work is
+            agreed on beforehand.
+          </p>
+
+          <p>
+            refunds are not available after significant work has been
+            completed.
+          </p>
         </div>
       </div>
     </section>
 
     <section id="contact">
-      <div class="site-wrapper">
+      <div class="container">
+        <h2>contact</h2>
 
         <div class="contact-box">
-          <div>
-            <h2>follow the project</h2>
+          <p>
+            when contacting me, include the type of commission, your budget,
+            your deadline and two or three music references.
+          </p>
 
-            <p>
-              Follow the series for new chapters, episodes, artwork, and
-              production updates.
-            </p>
+          <div class="contact-links">
+            <a href="https://discord.com" target="_blank">
+              discord: @febcel
+            </a>
+
+            <a href="mailto:your@email.com">
+              email
+            </a>
+
+            <a href="#" target="_blank">
+              soundcloud
+            </a>
+
+            <a href="#" target="_blank">
+              bandcamp
+            </a>
+
+            <a href="#" target="_blank">
+              spotify
+            </a>
           </div>
-
-          <a
-            class="button"
-            href="mailto:you@example.com"
-          >
-            contact
-          </a>
         </div>
-
       </div>
     </section>
-
   </main>
 
   <footer>
-    <div class="site-wrapper footer-inner">
-      <span>© 2026 series title</span>
-
-      <div class="footer-links">
-        <a href="#">youtube</a>
-        <a href="#">instagram</a>
-        <a href="#">comic</a>
-      </div>
+    <div class="container">
+      <p>© 2026 kekgirl.lol</p>
+      <p><a href="#top">back to top</a></p>
     </div>
   </footer>
-
 </body>
 </html>
