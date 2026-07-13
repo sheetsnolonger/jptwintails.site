@@ -10,29 +10,14 @@
 
   <meta
     name="description"
-    content="jptwintails — an original webcomic and webseries."
+    content="Official website for the webseries and comic."
   >
 
-  <meta name="theme-color" content="#ff4fa3">
-
-  <title>jptwintails</title>
+  <title>series title</title>
 
   <link rel="icon" href="assets/favicon.png">
 
   <style>
-    :root {
-      --pink: #ff4fa3;
-      --light-pink: #ffd2e8;
-      --dark-pink: #c91870;
-      --purple: #7d4dff;
-      --yellow: #fff27a;
-      --black: #17131b;
-      --white: #fffafb;
-      --gray: #6d6470;
-      --border: 3px solid var(--black);
-      --shadow: 6px 6px 0 var(--black);
-    }
-
     * {
       box-sizing: border-box;
     }
@@ -43,18 +28,10 @@
 
     body {
       margin: 0;
-      min-height: 100vh;
-      background:
-        radial-gradient(
-          circle at 10px 10px,
-          rgba(255, 79, 163, 0.18) 2px,
-          transparent 2px
-        );
-      background-size: 24px 24px;
-      background-color: var(--light-pink);
-      color: var(--black);
+      background: #f4f4f2;
+      color: #222222;
       font-family: Arial, Helvetica, sans-serif;
-      overflow-x: hidden;
+      line-height: 1.6;
     }
 
     img {
@@ -66,58 +43,18 @@
       color: inherit;
     }
 
-    button,
-    input,
-    textarea {
-      font: inherit;
+    .site-wrapper {
+      width: min(1100px, calc(100% - 40px));
+      margin: 0 auto;
     }
 
-    .announcement {
-      width: 100%;
-      overflow: hidden;
-      border-bottom: var(--border);
-      background: var(--yellow);
-      color: var(--black);
-      font-weight: bold;
-      text-transform: uppercase;
-      white-space: nowrap;
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #d5d5d0;
     }
 
-    .announcement-track {
-      display: inline-block;
-      min-width: 200%;
-      padding: 9px 0;
-      animation: marquee 20s linear infinite;
-    }
-
-    .announcement-track span {
-      display: inline-block;
-      padding-right: 60px;
-    }
-
-    @keyframes marquee {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: var(--border);
-      background: rgba(255, 250, 251, 0.96);
-      backdrop-filter: blur(8px);
-    }
-
-    .nav {
-      width: min(1200px, calc(100% - 32px));
-      margin: auto;
-      min-height: 74px;
+    .header-inner {
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -125,436 +62,303 @@
     }
 
     .logo {
-      color: var(--black);
-      font-size: clamp(1.35rem, 4vw, 2rem);
-      font-weight: 900;
-      letter-spacing: -1px;
-      text-decoration: none;
-      text-transform: lowercase;
-    }
-
-    .logo span {
-      color: var(--pink);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-links a {
-      display: block;
-      padding: 9px 12px;
-      border: 2px solid transparent;
-      font-size: 0.9rem;
-      font-weight: bold;
+      color: #1f1f1f;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
       text-decoration: none;
       text-transform: uppercase;
     }
 
-    .nav-links a:hover {
-      border-color: var(--black);
-      background: var(--pink);
-      color: white;
-      transform: rotate(-2deg);
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
     }
 
-    .menu-button {
-      display: none;
-      width: 46px;
-      height: 42px;
-      border: 2px solid var(--black);
-      background: var(--pink);
-      color: white;
-      font-size: 1.4rem;
-      font-weight: bold;
-      cursor: pointer;
+    nav a {
+      color: #555555;
+      font-size: 0.9rem;
+      text-decoration: none;
     }
 
-    main {
-      width: min(1200px, calc(100% - 32px));
-      margin: auto;
+    nav a:hover {
+      color: #000000;
     }
 
     .hero {
-      min-height: calc(100vh - 110px);
+      padding: 90px 0;
+      border-bottom: 1px solid #d5d5d0;
+    }
+
+    .hero-grid {
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
       align-items: center;
-      gap: 54px;
-      padding: 70px 0;
+      gap: 60px;
     }
 
     .eyebrow {
-      display: inline-block;
-      margin: 0 0 16px;
-      padding: 8px 12px;
-      border: 2px solid var(--black);
-      background: var(--yellow);
-      box-shadow: 4px 4px 0 var(--black);
-      font-size: 0.8rem;
-      font-weight: 900;
-      letter-spacing: 1px;
+      margin: 0 0 14px;
+      color: #6c6c68;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      transform: rotate(-2deg);
     }
 
-    .hero h1 {
+    h1 {
+      max-width: 700px;
       margin: 0;
-      max-width: 740px;
-      font-size: clamp(4rem, 11vw, 8.5rem);
-      line-height: 0.78;
-      letter-spacing: -8px;
-      text-transform: lowercase;
-    }
-
-    .hero h1 span {
-      display: block;
-      color: var(--pink);
-      -webkit-text-stroke: 3px var(--black);
-      text-shadow: 7px 7px 0 var(--purple);
+      color: #1a1a1a;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 400;
+      letter-spacing: -0.055em;
+      line-height: 0.95;
     }
 
     .hero-description {
-      max-width: 620px;
-      margin: 30px 0 0;
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      line-height: 1.7;
+      max-width: 600px;
+      margin: 28px 0 0;
+      color: #555555;
+      font-size: 1.05rem;
     }
 
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 30px;
+      gap: 12px;
+      margin-top: 32px;
     }
 
     .button {
       display: inline-flex;
+      min-height: 46px;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
-      padding: 12px 20px;
-      border: var(--border);
-      box-shadow: 5px 5px 0 var(--black);
-      font-weight: 900;
+      padding: 0 20px;
+      border: 1px solid #222222;
+      background: #222222;
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 600;
       text-decoration: none;
-      text-transform: uppercase;
-      transition: 0.15s ease;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
     }
 
     .button:hover {
-      box-shadow: 2px 2px 0 var(--black);
-      transform: translate(3px, 3px);
+      background: #444444;
     }
 
-    .button-primary {
-      background: var(--pink);
-      color: white;
+    .button.secondary {
+      background: transparent;
+      color: #222222;
     }
 
-    .button-secondary {
-      background: var(--white);
-      color: var(--black);
+    .button.secondary:hover {
+      background: #e6e6e2;
     }
 
-    .hero-art {
-      position: relative;
-    }
-
-    .hero-image-frame {
-      position: relative;
-      min-height: 540px;
+    .hero-image {
+      min-height: 500px;
       overflow: hidden;
-      border: var(--border);
-      border-radius: 46% 46% 10px 10px;
-      background:
-        linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.7),
-          rgba(125, 77, 255, 0.18)
-        ),
-        var(--pink);
-      box-shadow: 12px 12px 0 var(--black);
-      transform: rotate(2deg);
+      background: #deded8;
     }
 
-    .hero-image-frame img {
+    .hero-image img {
       width: 100%;
       height: 100%;
-      min-height: 540px;
+      min-height: 500px;
       object-fit: cover;
     }
 
-    .image-placeholder {
-      width: 100%;
-      min-height: 540px;
-      display: grid;
-      place-items: center;
-      padding: 30px;
-      text-align: center;
-    }
-
-    .image-placeholder strong {
-      display: block;
-      font-size: clamp(2rem, 5vw, 4rem);
-      line-height: 1;
-      text-transform: uppercase;
-    }
-
-    .image-placeholder small {
-      display: block;
-      margin-top: 14px;
-      font-weight: bold;
-    }
-
-    .sticker {
-      position: absolute;
-      z-index: 2;
-      padding: 12px 15px;
-      border: 2px solid var(--black);
-      background: var(--yellow);
-      box-shadow: 4px 4px 0 var(--black);
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-
-    .sticker-one {
-      top: -24px;
-      right: -20px;
-      transform: rotate(8deg);
-    }
-
-    .sticker-two {
-      bottom: 38px;
-      left: -30px;
-      background: var(--purple);
-      color: white;
-      transform: rotate(-7deg);
-    }
-
-    .section {
-      padding: 90px 0;
-      scroll-margin-top: 90px;
+    section {
+      padding: 85px 0;
+      border-bottom: 1px solid #d5d5d0;
     }
 
     .section-heading {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 36px;
-      border-bottom: var(--border);
-    }
-
-    .section-heading h2 {
-      margin: 0;
-      font-size: clamp(2.6rem, 7vw, 5.5rem);
-      line-height: 0.9;
-      letter-spacing: -4px;
-      text-transform: lowercase;
-    }
-
-    .section-heading p {
-      max-width: 460px;
-      margin: 0 0 12px;
-      color: var(--gray);
-      line-height: 1.6;
-    }
-
-    .featured-episode {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      border: var(--border);
-      background: var(--white);
-      box-shadow: var(--shadow);
+      grid-template-columns: 0.35fr 1fr;
+      gap: 40px;
+      margin-bottom: 45px;
     }
 
-    .featured-media {
-      min-height: 430px;
-      border-right: var(--border);
-      background: var(--black);
+    .section-number {
+      color: #888883;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
     }
 
-    .featured-media img,
-    .featured-media iframe {
+    h2 {
+      margin: 0;
+      color: #1f1f1f;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.1rem, 5vw, 4rem);
+      font-weight: 400;
+      letter-spacing: -0.035em;
+      line-height: 1;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .about-grid p {
+      margin-top: 0;
+      color: #555555;
+    }
+
+    .info-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid #c9c9c4;
+    }
+
+    .info-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 15px 0;
+      border-bottom: 1px solid #c9c9c4;
+    }
+
+    .info-label {
+      color: #777772;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .content-card {
+      background: #ffffff;
+      border: 1px solid #d3d3ce;
+    }
+
+    .content-card-image {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #dfdfda;
+    }
+
+    .content-card-image img {
       width: 100%;
       height: 100%;
-      min-height: 430px;
-      border: 0;
       object-fit: cover;
+      transition: transform 0.25s ease;
     }
 
-    .video-placeholder {
-      min-height: 430px;
+    .content-card:hover .content-card-image img {
+      transform: scale(1.02);
+    }
+
+    .content-card-body {
+      padding: 25px;
+    }
+
+    .content-card-type {
+      margin: 0 0 10px;
+      color: #777772;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .content-card h3 {
+      margin: 0;
+      color: #222222;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.65rem;
+      font-weight: 400;
+    }
+
+    .content-card p {
+      margin: 12px 0 20px;
+      color: #666661;
+    }
+
+    .text-link {
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .text-link:hover {
+      text-decoration: underline;
+    }
+
+    .episodes {
       display: grid;
-      place-items: center;
-      padding: 30px;
-      color: white;
-      text-align: center;
-      background:
-        repeating-linear-gradient(
-          -45deg,
-          #17131b,
-          #17131b 14px,
-          #211926 14px,
-          #211926 28px
-        );
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid #d1d1cc;
+      background: #d1d1cc;
     }
 
-    .play-icon {
-      width: 86px;
-      height: 86px;
-      margin: auto auto 20px;
+    .episode {
       display: grid;
-      place-items: center;
-      border: 3px solid white;
-      border-radius: 50%;
-      background: var(--pink);
-      font-size: 2rem;
+      grid-template-columns: 90px 1fr auto;
+      align-items: center;
+      gap: 25px;
+      padding: 24px;
+      background: #ffffff;
+      text-decoration: none;
+      transition: background 0.2s ease;
     }
 
-    .featured-info {
-      padding: clamp(28px, 5vw, 56px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .episode:hover {
+      background: #ededE9;
     }
 
     .episode-number {
-      color: var(--pink);
-      font-size: 0.85rem;
-      font-weight: 900;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      color: #777772;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
     }
 
-    .featured-info h3 {
-      margin: 10px 0 18px;
-      font-size: clamp(2rem, 5vw, 4rem);
-      line-height: 0.95;
-      letter-spacing: -2px;
+    .episode h3 {
+      margin: 0;
+      font-size: 1rem;
     }
 
-    .featured-info p {
-      margin: 0 0 28px;
-      line-height: 1.7;
+    .episode p {
+      margin: 4px 0 0;
+      color: #777772;
+      font-size: 0.88rem;
     }
 
-    .episode-grid,
-    .comic-grid,
-    .cast-grid,
-    .update-grid {
+    .episode-arrow {
+      color: #777772;
+      font-size: 1.2rem;
+    }
+
+    .characters-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
+      gap: 20px;
     }
 
-    .episode-card,
-    .comic-card,
-    .character-card,
-    .update-card {
-      overflow: hidden;
-      border: var(--border);
-      background: var(--white);
-      box-shadow: 5px 5px 0 var(--black);
-      transition: 0.15s ease;
-    }
-
-    .episode-card:hover,
-    .comic-card:hover,
-    .character-card:hover,
-    .update-card:hover {
-      box-shadow: 10px 10px 0 var(--pink);
-      transform: translate(-3px, -3px);
-    }
-
-    .card-image {
-      aspect-ratio: 16 / 10;
-      border-bottom: var(--border);
-      background: var(--light-pink);
-      overflow: hidden;
-    }
-
-    .card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: 0.25s ease;
-    }
-
-    .episode-card:hover .card-image img,
-    .comic-card:hover .card-image img {
-      transform: scale(1.04);
-    }
-
-    .card-placeholder {
-      width: 100%;
-      height: 100%;
-      min-height: 220px;
-      display: grid;
-      place-items: center;
+    .character {
       padding: 20px;
-      background:
-        linear-gradient(
-          135deg,
-          var(--light-pink),
-          #c9b7ff
-        );
-      font-size: 1.1rem;
-      font-weight: bold;
-      text-align: center;
-      text-transform: uppercase;
-    }
-
-    .card-content {
-      padding: 22px;
-    }
-
-    .card-content h3 {
-      margin: 6px 0 10px;
-      font-size: 1.45rem;
-    }
-
-    .card-content p {
-      margin: 0;
-      color: var(--gray);
-      line-height: 1.6;
-    }
-
-    .card-link {
-      display: inline-block;
-      margin-top: 18px;
-      color: var(--dark-pink);
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-
-    .comic-card .card-image {
-      aspect-ratio: 4 / 5;
-    }
-
-    .comic-card:nth-child(2) {
-      transform: translateY(25px);
-    }
-
-    .comic-card:nth-child(2):hover {
-      transform: translate(-3px, 22px);
-    }
-
-    .character-card {
-      position: relative;
+      background: #ffffff;
+      border: 1px solid #d3d3ce;
     }
 
     .character-image {
       aspect-ratio: 4 / 5;
-      border-bottom: var(--border);
+      margin-bottom: 20px;
       overflow: hidden;
-      background: var(--pink);
+      background: #deded8;
     }
 
     .character-image img {
@@ -563,840 +367,476 @@
       object-fit: cover;
     }
 
-    .character-card:nth-child(2) .character-image {
-      background: var(--purple);
-    }
-
-    .character-card:nth-child(3) .character-image {
-      background: var(--yellow);
-    }
-
-    .character-info {
-      padding: 22px;
-    }
-
-    .character-info h3 {
+    .character h3 {
       margin: 0;
-      font-size: 1.8rem;
-      text-transform: lowercase;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.4rem;
+      font-weight: 400;
     }
 
-    .character-role {
-      display: block;
-      margin: 5px 0 12px;
-      color: var(--dark-pink);
-      font-size: 0.8rem;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-
-    .character-info p {
-      margin: 0;
-      color: var(--gray);
-      line-height: 1.6;
-    }
-
-    .about-panel {
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      border: var(--border);
-      background: var(--white);
-      box-shadow: var(--shadow);
-    }
-
-    .about-title {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 420px;
-      padding: 40px;
-      border-right: var(--border);
-      background: var(--pink);
-      color: white;
-      text-align: center;
-    }
-
-    .about-title h2 {
-      margin: 0;
-      font-size: clamp(3rem, 8vw, 7rem);
-      line-height: 0.8;
-      letter-spacing: -5px;
-      text-transform: lowercase;
-      transform: rotate(-5deg);
-    }
-
-    .about-content {
-      padding: clamp(32px, 7vw, 72px);
-    }
-
-    .about-content p {
-      margin: 0 0 20px;
-      font-size: 1.08rem;
-      line-height: 1.8;
-    }
-
-    .about-list {
-      margin: 30px 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .about-list li {
-      padding: 12px 0;
-      border-bottom: 2px dashed var(--black);
-      font-weight: bold;
-    }
-
-    .update-card {
-      padding: 24px;
-    }
-
-    .update-date {
-      color: var(--dark-pink);
-      font-size: 0.8rem;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-
-    .update-card h3 {
-      margin: 9px 0;
-      font-size: 1.35rem;
-    }
-
-    .update-card p {
-      margin: 0;
-      color: var(--gray);
-      line-height: 1.6;
+    .character p {
+      margin: 8px 0 0;
+      color: #666661;
+      font-size: 0.9rem;
     }
 
     .contact-box {
       display: grid;
       grid-template-columns: 1fr auto;
       align-items: center;
-      gap: 30px;
-      padding: clamp(32px, 7vw, 70px);
-      border: var(--border);
-      background: var(--purple);
-      color: white;
-      box-shadow: var(--shadow);
+      gap: 40px;
+      padding: 45px;
+      background: #222222;
+      color: #ffffff;
     }
 
     .contact-box h2 {
-      margin: 0 0 14px;
-      font-size: clamp(2.8rem, 7vw, 6rem);
-      line-height: 0.85;
-      letter-spacing: -4px;
-      text-transform: lowercase;
+      color: #ffffff;
     }
 
     .contact-box p {
       max-width: 650px;
-      margin: 0;
-      line-height: 1.7;
+      margin: 18px 0 0;
+      color: #cfcfca;
     }
 
-    .social-links {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    .contact-box .button {
+      border-color: #ffffff;
+      background: #ffffff;
+      color: #222222;
     }
 
-    .social-links a {
-      min-width: 180px;
-      padding: 13px 18px;
-      border: 3px solid var(--black);
-      background: var(--white);
-      color: var(--black);
-      box-shadow: 4px 4px 0 var(--black);
-      font-weight: 900;
-      text-align: center;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-
-    .social-links a:hover {
-      background: var(--yellow);
+    .contact-box .button:hover {
+      background: #deded8;
     }
 
     footer {
-      margin-top: 100px;
-      border-top: var(--border);
-      background: var(--black);
-      color: white;
+      padding: 30px 0;
+      background: #ffffff;
     }
 
     .footer-inner {
-      width: min(1200px, calc(100% - 32px));
-      margin: auto;
-      padding: 38px 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 20px;
+      color: #777772;
+      font-size: 0.82rem;
     }
 
-    .footer-inner p {
-      margin: 0;
+    .footer-links {
+      display: flex;
+      gap: 16px;
     }
 
-    .back-to-top {
-      color: var(--yellow);
-      font-weight: bold;
+    .footer-links a {
       text-decoration: none;
-      text-transform: uppercase;
     }
 
-    @media (max-width: 900px) {
-      .menu-button {
-        display: block;
-      }
+    .footer-links a:hover {
+      color: #222222;
+    }
 
-      .nav-links {
-        position: absolute;
-        top: 74px;
-        left: 0;
-        width: 100%;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        border-bottom: var(--border);
-        background: var(--white);
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-links a {
-        padding: 16px 24px;
-        border-top: 1px solid #ddd;
-      }
-
+    @media (max-width: 850px) {
       .hero {
-        min-height: auto;
-        grid-template-columns: 1fr;
-        padding: 55px 0 80px;
+        padding: 60px 0;
       }
 
-      .hero h1 {
-        letter-spacing: -5px;
-      }
-
-      .hero-art {
-        max-width: 650px;
-        margin: auto;
-      }
-
-      .featured-episode,
-      .about-panel {
-        grid-template-columns: 1fr;
-      }
-
-      .featured-media,
-      .about-title {
-        border-right: 0;
-        border-bottom: var(--border);
-      }
-
-      .episode-grid,
-      .comic-grid,
-      .cast-grid,
-      .update-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .comic-card:nth-child(2),
-      .comic-card:nth-child(2):hover {
-        transform: none;
-      }
-
+      .hero-grid,
+      .about-grid,
       .contact-box {
         grid-template-columns: 1fr;
       }
 
-      .social-links {
-        flex-direction: row;
-        flex-wrap: wrap;
+      .hero-grid {
+        gap: 40px;
+      }
+
+      .hero-image,
+      .hero-image img {
+        min-height: 380px;
+      }
+
+      .section-heading {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .characters-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contact-box {
+        align-items: start;
       }
     }
 
     @media (max-width: 620px) {
-      main,
-      .nav,
-      .footer-inner {
-        width: min(100% - 20px, 1200px);
+      .site-wrapper {
+        width: min(100% - 24px, 1100px);
       }
 
-      .nav {
-        min-height: 64px;
+      .header-inner {
+        min-height: auto;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px 0;
       }
 
-      .nav-links {
-        top: 64px;
+      nav {
+        width: 100%;
+        gap: 8px 18px;
+        overflow-x: auto;
+        padding-bottom: 3px;
+      }
+
+      nav a {
+        flex-shrink: 0;
+      }
+
+      section {
+        padding: 60px 0;
       }
 
       .hero {
-        gap: 42px;
-        padding-top: 42px;
+        padding: 55px 0;
       }
 
-      .hero h1 {
-        font-size: clamp(3.5rem, 20vw, 6rem);
-        letter-spacing: -4px;
+      h1 {
+        font-size: clamp(3rem, 17vw, 5rem);
       }
 
-      .hero h1 span {
-        -webkit-text-stroke: 2px var(--black);
-        text-shadow: 4px 4px 0 var(--purple);
+      .hero-image,
+      .hero-image img {
+        min-height: 290px;
       }
 
-      .hero-image-frame,
-      .hero-image-frame img,
-      .image-placeholder {
-        min-height: 430px;
-      }
-
-      .sticker {
-        font-size: 0.75rem;
-      }
-
-      .sticker-one {
-        right: -6px;
-      }
-
-      .sticker-two {
-        left: -6px;
-      }
-
-      .section {
-        padding: 68px 0;
-      }
-
-      .section-heading {
-        display: block;
-      }
-
-      .section-heading h2 {
-        margin-bottom: 18px;
-        letter-spacing: -2px;
-      }
-
-      .episode-grid,
-      .comic-grid,
-      .cast-grid,
-      .update-grid {
+      .content-grid,
+      .characters-grid {
         grid-template-columns: 1fr;
       }
 
-      .featured-media,
-      .featured-media img,
-      .featured-media iframe,
-      .video-placeholder {
-        min-height: 270px;
+      .episode {
+        grid-template-columns: 55px 1fr;
+        gap: 15px;
+        padding: 18px;
       }
 
-      .about-title {
-        min-height: 260px;
+      .episode-arrow {
+        display: none;
       }
 
-      .hero-buttons,
-      .social-links {
-        flex-direction: column;
-      }
-
-      .button,
-      .social-links a {
-        width: 100%;
+      .contact-box {
+        padding: 30px 24px;
       }
 
       .footer-inner {
-        flex-direction: column;
         align-items: flex-start;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      .announcement-track {
-        animation: none;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition: none !important;
+        flex-direction: column;
       }
     }
   </style>
 </head>
 
-<body id="top">
+<body>
 
-  <div class="announcement">
-    <div class="announcement-track">
-      <span>new episodes and comic pages coming soon ★ welcome to jptwintails ★</span>
-      <span>new episodes and comic pages coming soon ★ welcome to jptwintails ★</span>
-      <span>new episodes and comic pages coming soon ★ welcome to jptwintails ★</span>
-      <span>new episodes and comic pages coming soon ★ welcome to jptwintails ★</span>
+  <header>
+    <div class="site-wrapper header-inner">
+      <a class="logo" href="#">series title</a>
+
+      <nav aria-label="Main navigation">
+        <a href="#about">about</a>
+        <a href="#read-watch">read / watch</a>
+        <a href="#episodes">episodes</a>
+        <a href="#characters">characters</a>
+        <a href="#contact">contact</a>
+      </nav>
     </div>
-  </div>
-
-  <header class="site-header">
-    <nav class="nav">
-      <a class="logo" href="#top">jp<span>twintails</span></a>
-
-      <button
-        class="menu-button"
-        id="menuButton"
-        type="button"
-        aria-label="Open navigation"
-        aria-expanded="false"
-      >
-        ☰
-      </button>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#episodes">episodes</a></li>
-        <li><a href="#comic">comic</a></li>
-        <li><a href="#cast">cast</a></li>
-        <li><a href="#about">about</a></li>
-        <li><a href="#updates">updates</a></li>
-        <li><a href="#contact">links</a></li>
-      </ul>
-    </nav>
   </header>
 
   <main>
 
     <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">original webcomic + webseries</p>
+      <div class="site-wrapper hero-grid">
 
-        <h1>
-          jp
-          <span>twintails</span>
-        </h1>
+        <div>
+          <p class="eyebrow">an original webseries and comic</p>
 
-        <p class="hero-description">
-          An original story told through comics, animation, character art,
-          music, and strange internet energy. Enter the world of jptwintails
-          and meet the characters causing all the problems.
-        </p>
+          <h1>series title</h1>
 
-        <div class="hero-buttons">
-          <a class="button button-primary" href="#comic">
-            read the comic
-          </a>
+          <p class="hero-description">
+            Add a short introduction to your story here. Describe the
+            setting, main conflict, or overall mood without revealing too
+            much.
+          </p>
 
-          <a class="button button-secondary" href="#episodes">
-            watch episodes
-          </a>
+          <div class="hero-buttons">
+            <a class="button" href="#read-watch">read the comic</a>
+            <a class="button secondary" href="#episodes">watch the series</a>
+          </div>
         </div>
-      </div>
 
-      <div class="hero-art">
-        <div class="sticker sticker-one">new series!</div>
-
-        <div class="hero-image-frame">
-          <!--
-          Replace the placeholder below with:
-
+        <div class="hero-image">
           <img
-            src="assets/hero-art.png"
-            alt="jptwintails main characters"
+            src="assets/hero-image.jpg"
+            alt="Promotional artwork for series title"
           >
-          -->
-
-          <div class="image-placeholder">
-            <div>
-              <strong>main character art</strong>
-              <small>replace this with assets/hero-art.png</small>
-            </div>
-          </div>
         </div>
-
-        <div class="sticker sticker-two">made on the internet</div>
-      </div>
-    </section>
-
-    <section class="section" id="episodes">
-      <div class="section-heading">
-        <h2>webseries</h2>
-
-        <p>
-          Watch the animated story, shorts, trailers, music videos, and
-          behind-the-scenes uploads.
-        </p>
-      </div>
-
-      <article class="featured-episode">
-        <div class="featured-media">
-          <!--
-          You can replace this placeholder with a YouTube embed:
-
-          <iframe
-            src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-            title="jptwintails episode 1"
-            allowfullscreen
-          ></iframe>
-          -->
-
-          <div class="video-placeholder">
-            <div>
-              <div class="play-icon">▶</div>
-              <strong>featured episode video</strong>
-              <p>paste your YouTube embed here</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="featured-info">
-          <span class="episode-number">episode 01</span>
-
-          <h3>the beginning of something weird</h3>
-
-          <p>
-            Introduce your first episode here. Write a short description
-            explaining what happens without giving away too much.
-          </p>
-
-          <a
-            class="button button-primary"
-            href="https://youtube.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            watch now
-          </a>
-        </div>
-      </article>
-
-      <div class="episode-grid" style="margin-top: 34px;">
-
-        <article class="episode-card">
-          <div class="card-image">
-            <div class="card-placeholder">episode thumbnail 02</div>
-          </div>
-
-          <div class="card-content">
-            <span class="episode-number">episode 02</span>
-            <h3>an extremely normal afternoon</h3>
-            <p>
-              Add a small description of the episode or animated short.
-            </p>
-            <a class="card-link" href="#">watch episode →</a>
-          </div>
-        </article>
-
-        <article class="episode-card">
-          <div class="card-image">
-            <div class="card-placeholder">episode thumbnail 03</div>
-          </div>
-
-          <div class="card-content">
-            <span class="episode-number">episode 03</span>
-            <h3>do not answer the phone</h3>
-            <p>
-              Add a small description of the episode or animated short.
-            </p>
-            <a class="card-link" href="#">watch episode →</a>
-          </div>
-        </article>
-
-        <article class="episode-card">
-          <div class="card-image">
-            <div class="card-placeholder">bonus video</div>
-          </div>
-
-          <div class="card-content">
-            <span class="episode-number">bonus</span>
-            <h3>character animation test</h3>
-            <p>
-              Use this card for trailers, music videos, shorts, or extras.
-            </p>
-            <a class="card-link" href="#">watch video →</a>
-          </div>
-        </article>
 
       </div>
     </section>
 
-    <section class="section" id="comic">
-      <div class="section-heading">
-        <h2>webcomic</h2>
+    <section id="about">
+      <div class="site-wrapper">
 
-        <p>
-          Read the newest chapters online. New pages can be added as individual
-          cards or linked to a separate comic reader.
-        </p>
-      </div>
-
-      <div class="comic-grid">
-
-        <article class="comic-card">
-          <div class="card-image">
-            <div class="card-placeholder">chapter cover 01</div>
-          </div>
-
-          <div class="card-content">
-            <span class="episode-number">chapter 01</span>
-            <h3>start here</h3>
-            <p>
-              The first chapter of jptwintails. Introduce the world and cast.
-            </p>
-            <a class="card-link" href="#">read chapter →</a>
-          </div>
-        </article>
-
-        <article class="comic-card">
-          <div class="card-image">
-            <div class="card-placeholder">chapter cover 02</div>
-          </div>
-
-          <div class="card-content">
-            <span class="episode-number">chapter 02</span>
-            <h3>after school</h3>
-            <p>
-              Add a quick teaser for this chapter without spoiling the ending.
-            </p>
-            <a class="card-link" href="#">read chapter →</a>
-          </div>
-        </article>
-
-        <article class="comic-card">
-          <div class="card-image">
-            <div class="card-placeholder">chapter cover 03</div>
-          </div>
-
-          <div class="card-content">
-            <span class="episode-number">chapter 03</span>
-            <h3>the broken tape</h3>
-            <p>
-              Add another chapter description or mark the chapter as upcoming.
-            </p>
-            <a class="card-link" href="#">coming soon →</a>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <section class="section" id="cast">
-      <div class="section-heading">
-        <h2>cast</h2>
-
-        <p>
-          Meet the characters of jptwintails. Replace these placeholders with
-          character portraits and descriptions.
-        </p>
-      </div>
-
-      <div class="cast-grid">
-
-        <article class="character-card">
-          <div class="character-image">
-            <div class="card-placeholder">character portrait</div>
-          </div>
-
-          <div class="character-info">
-            <h3>character one</h3>
-            <span class="character-role">main character</span>
-            <p>
-              Write their personality, role in the story, likes, dislikes,
-              and one suspicious fact.
-            </p>
-          </div>
-        </article>
-
-        <article class="character-card">
-          <div class="character-image">
-            <div class="card-placeholder">character portrait</div>
-          </div>
-
-          <div class="character-info">
-            <h3>character two</h3>
-            <span class="character-role">best friend?</span>
-            <p>
-              Write their personality, relationship to the protagonist,
-              and what they are hiding.
-            </p>
-          </div>
-        </article>
-
-        <article class="character-card">
-          <div class="character-image">
-            <div class="card-placeholder">character portrait</div>
-          </div>
-
-          <div class="character-info">
-            <h3>character three</h3>
-            <span class="character-role">unknown entity</span>
-            <p>
-              Write a vague and mysterious description that makes visitors
-              want to learn more.
-            </p>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="about-panel">
-        <div class="about-title">
-          <h2>about the project</h2>
+        <div class="section-heading">
+          <span class="section-number">01</span>
+          <h2>about the story</h2>
         </div>
 
-        <div class="about-content">
-          <p>
-            <strong>jptwintails</strong> is an independent webcomic and
-            webseries project created online. The story can combine animation,
-            illustration, music, comedy, drama, horror, or whatever direction
-            you want the series to take.
-          </p>
+        <div class="about-grid">
 
-          <p>
-            Use this section to explain when the project began, what inspired
-            it, who works on it, and where people can follow its development.
-          </p>
+          <div>
+            <p>
+              Series Title is an original comic and webseries following a
+              group of characters as they navigate their changing lives,
+              relationships, and surroundings.
+            </p>
 
-          <ul class="about-list">
-            <li>created, written, and illustrated independently</li>
-            <li>original characters and story</li>
-            <li>new comic pages and episodes released online</li>
-            <li>character art, music, extras, and behind-the-scenes posts</li>
+            <p>
+              Use this section to explain the premise in more detail. You can
+              also mention how the comic and webseries connect to each other.
+            </p>
+          </div>
+
+          <ul class="info-list">
+            <li>
+              <span class="info-label">genre</span>
+              <span>drama / comedy</span>
+            </li>
+
+            <li>
+              <span class="info-label">format</span>
+              <span>webcomic and webseries</span>
+            </li>
+
+            <li>
+              <span class="info-label">status</span>
+              <span>ongoing</span>
+            </li>
+
+            <li>
+              <span class="info-label">created by</span>
+              <span>your name</span>
+            </li>
           </ul>
 
-          <a class="button button-primary" href="#contact">
-            follow the project
-          </a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="updates">
-      <div class="section-heading">
-        <h2>updates</h2>
+    <section id="read-watch">
+      <div class="site-wrapper">
 
-        <p>
-          Post production news, new character reveals, episode announcements,
-          and comic release dates here.
-        </p>
-      </div>
+        <div class="section-heading">
+          <span class="section-number">02</span>
+          <h2>read and watch</h2>
+        </div>
 
-      <div class="update-grid">
+        <div class="content-grid">
 
-        <article class="update-card">
-          <span class="update-date">july 2026</span>
-          <h3>the official site is live</h3>
-          <p>
-            Welcome to the official home of the jptwintails webcomic and
-            webseries.
-          </p>
-        </article>
+          <article class="content-card">
+            <div class="content-card-image">
+              <img
+                src="assets/comic-cover.jpg"
+                alt="Cover artwork for the comic"
+              >
+            </div>
 
-        <article class="update-card">
-          <span class="update-date">coming soon</span>
-          <h3>first comic chapter</h3>
-          <p>
-            The opening chapter is currently being drawn and prepared for
-            release.
-          </p>
-        </article>
+            <div class="content-card-body">
+              <p class="content-card-type">webcomic</p>
+              <h3>read the comic</h3>
 
-        <article class="update-card">
-          <span class="update-date">in production</span>
-          <h3>episode one</h3>
-          <p>
-            Storyboarding, animation, editing, and music production are
-            underway.
-          </p>
-        </article>
+              <p>
+                Start from the beginning or continue reading the newest
+                chapter.
+              </p>
 
+              <a class="text-link" href="#">
+                open comic →
+              </a>
+            </div>
+          </article>
+
+          <article class="content-card">
+            <div class="content-card-image">
+              <img
+                src="assets/series-cover.jpg"
+                alt="Promotional artwork for the webseries"
+              >
+            </div>
+
+            <div class="content-card-body">
+              <p class="content-card-type">webseries</p>
+              <h3>watch the series</h3>
+
+              <p>
+                View released episodes, trailers, and additional videos.
+              </p>
+
+              <a class="text-link" href="#">
+                watch episodes →
+              </a>
+            </div>
+          </article>
+
+        </div>
       </div>
     </section>
 
-    <section class="section" id="contact">
-      <div class="contact-box">
-        <div>
-          <h2>follow jptwintails</h2>
+    <section id="episodes">
+      <div class="site-wrapper">
 
-          <p>
-            Keep up with new chapters, episodes, artwork, animations, and
-            production updates across the official project pages.
-          </p>
+        <div class="section-heading">
+          <span class="section-number">03</span>
+          <h2>latest releases</h2>
         </div>
 
-        <div class="social-links">
-          <a
-            href="https://youtube.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            youtube
+        <div class="episodes">
+
+          <a class="episode" href="#">
+            <span class="episode-number">01</span>
+
+            <div>
+              <h3>episode or chapter title</h3>
+              <p>webseries episode · July 2026</p>
+            </div>
+
+            <span class="episode-arrow">→</span>
           </a>
 
-          <a
-            href="https://instagram.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            instagram
+          <a class="episode" href="#">
+            <span class="episode-number">02</span>
+
+            <div>
+              <h3>episode or chapter title</h3>
+              <p>comic chapter · June 2026</p>
+            </div>
+
+            <span class="episode-arrow">→</span>
           </a>
 
-          <a
-            href="https://tiktok.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            tiktok
+          <a class="episode" href="#">
+            <span class="episode-number">03</span>
+
+            <div>
+              <h3>episode or chapter title</h3>
+              <p>webseries episode · May 2026</p>
+            </div>
+
+            <span class="episode-arrow">→</span>
           </a>
 
-          <a href="mailto:your@email.com">
-            email
+        </div>
+      </div>
+    </section>
+
+    <section id="characters">
+      <div class="site-wrapper">
+
+        <div class="section-heading">
+          <span class="section-number">04</span>
+          <h2>characters</h2>
+        </div>
+
+        <div class="characters-grid">
+
+          <article class="character">
+            <div class="character-image">
+              <img
+                src="assets/character-1.jpg"
+                alt="Character name"
+              >
+            </div>
+
+            <h3>character name</h3>
+            <p>
+              A short description of the character and their role in the
+              story.
+            </p>
+          </article>
+
+          <article class="character">
+            <div class="character-image">
+              <img
+                src="assets/character-2.jpg"
+                alt="Character name"
+              >
+            </div>
+
+            <h3>character name</h3>
+            <p>
+              A short description of the character and their role in the
+              story.
+            </p>
+          </article>
+
+          <article class="character">
+            <div class="character-image">
+              <img
+                src="assets/character-3.jpg"
+                alt="Character name"
+              >
+            </div>
+
+            <h3>character name</h3>
+            <p>
+              A short description of the character and their role in the
+              story.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="site-wrapper">
+
+        <div class="contact-box">
+          <div>
+            <h2>follow the project</h2>
+
+            <p>
+              Follow the series for new chapters, episodes, artwork, and
+              production updates.
+            </p>
+          </div>
+
+          <a
+            class="button"
+            href="mailto:you@example.com"
+          >
+            contact
           </a>
         </div>
+
       </div>
     </section>
 
   </main>
 
   <footer>
-    <div class="footer-inner">
-      <p>
-        © 2026 jptwintails. all characters and artwork belong to their creator.
-      </p>
+    <div class="site-wrapper footer-inner">
+      <span>© 2026 series title</span>
 
-      <a class="back-to-top" href="#top">
-        back to top ↑
-      </a>
+      <div class="footer-links">
+        <a href="#">youtube</a>
+        <a href="#">instagram</a>
+        <a href="#">comic</a>
+      </div>
     </div>
   </footer>
-
-  <script>
-    const menuButton = document.getElementById("menuButton");
-    const navLinks = document.getElementById("navLinks");
-    const navigationLinks = navLinks.querySelectorAll("a");
-
-    menuButton.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
-
-      menuButton.setAttribute("aria-expanded", String(isOpen));
-      menuButton.textContent = isOpen ? "×" : "☰";
-    });
-
-    navigationLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-        menuButton.setAttribute("aria-expanded", "false");
-        menuButton.textContent = "☰";
-      });
-    });
-  </script>
 
 </body>
 </html>
