@@ -10,14 +10,29 @@
 
   <meta
     name="description"
-    content="kekgirl.lol — music production and beat commissions."
+    content="jptwintails — an original webcomic and webseries."
   >
 
-  <title>kekgirl.lol</title>
+  <meta name="theme-color" content="#ff4fa3">
+
+  <title>jptwintails</title>
 
   <link rel="icon" href="assets/favicon.png">
 
   <style>
+    :root {
+      --pink: #ff4fa3;
+      --light-pink: #ffd2e8;
+      --dark-pink: #c91870;
+      --purple: #7d4dff;
+      --yellow: #fff27a;
+      --black: #17131b;
+      --white: #fffafb;
+      --gray: #6d6470;
+      --border: 3px solid var(--black);
+      --shadow: 6px 6px 0 var(--black);
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -28,19 +43,18 @@
 
     body {
       margin: 0;
-      background: #f4f4f4;
-      color: #111;
+      min-height: 100vh;
+      background:
+        radial-gradient(
+          circle at 10px 10px,
+          rgba(255, 79, 163, 0.18) 2px,
+          transparent 2px
+        );
+      background-size: 24px 24px;
+      background-color: var(--light-pink);
+      color: var(--black);
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    a {
-      color: #111;
-    }
-
-    a:hover {
-      color: #666;
+      overflow-x: hidden;
     }
 
     img {
@@ -48,537 +62,1341 @@
       max-width: 100%;
     }
 
-    .container {
-      width: min(950px, calc(100% - 40px));
-      margin: 0 auto;
+    a {
+      color: inherit;
     }
 
-    header {
-      padding: 60px 0 40px;
-      border-bottom: 1px solid #ccc;
-      background: white;
+    button,
+    input,
+    textarea {
+      font: inherit;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: clamp(2.8rem, 8vw, 5rem);
-      font-weight: 500;
-      letter-spacing: -3px;
-    }
-
-    header p {
-      max-width: 650px;
-      margin: 15px 0 0;
-      color: #555;
-      font-size: 1.1rem;
-    }
-
-    nav {
-      border-bottom: 1px solid #ccc;
-      background: white;
-    }
-
-    nav .container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 25px;
-      padding-top: 15px;
-      padding-bottom: 15px;
-    }
-
-    nav a {
-      text-decoration: none;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      background: white;
-    }
-
-    section {
-      padding: 55px 0;
-      border-bottom: 1px solid #ddd;
-    }
-
-    h2 {
-      margin: 0 0 25px;
-      font-size: 2rem;
-      font-weight: 500;
-    }
-
-    h3 {
-      margin-top: 0;
-      font-size: 1.2rem;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 0.6fr;
-      gap: 40px;
-      align-items: start;
-    }
-
-    .profile-image {
+    .announcement {
       width: 100%;
-      aspect-ratio: 1 / 1;
-      border: 1px solid #ccc;
-      object-fit: cover;
-      background: #eee;
-    }
-
-    .service-list {
-      display: grid;
-      gap: 15px;
-    }
-
-    .service {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 25px;
-      padding: 20px;
-      border: 1px solid #ccc;
-    }
-
-    .service p {
-      margin: 8px 0 0;
-      color: #555;
-    }
-
-    .price {
+      overflow: hidden;
+      border-bottom: var(--border);
+      background: var(--yellow);
+      color: var(--black);
       font-weight: bold;
+      text-transform: uppercase;
       white-space: nowrap;
     }
 
-    .music-grid {
+    .announcement-track {
+      display: inline-block;
+      min-width: 200%;
+      padding: 9px 0;
+      animation: marquee 20s linear infinite;
+    }
+
+    .announcement-track span {
+      display: inline-block;
+      padding-right: 60px;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: var(--border);
+      background: rgba(255, 250, 251, 0.96);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav {
+      width: min(1200px, calc(100% - 32px));
+      margin: auto;
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      color: var(--black);
+      font-size: clamp(1.35rem, 4vw, 2rem);
+      font-weight: 900;
+      letter-spacing: -1px;
+      text-decoration: none;
+      text-transform: lowercase;
+    }
+
+    .logo span {
+      color: var(--pink);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 9px 12px;
+      border: 2px solid transparent;
+      font-size: 0.9rem;
+      font-weight: bold;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover {
+      border-color: var(--black);
+      background: var(--pink);
+      color: white;
+      transform: rotate(-2deg);
+    }
+
+    .menu-button {
+      display: none;
+      width: 46px;
+      height: 42px;
+      border: 2px solid var(--black);
+      background: var(--pink);
+      color: white;
+      font-size: 1.4rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    main {
+      width: min(1200px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    .hero {
+      min-height: calc(100vh - 110px);
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 54px;
+      padding: 70px 0;
     }
 
-    .track {
-      padding: 20px;
-      border: 1px solid #ccc;
+    .eyebrow {
+      display: inline-block;
+      margin: 0 0 16px;
+      padding: 8px 12px;
+      border: 2px solid var(--black);
+      background: var(--yellow);
+      box-shadow: 4px 4px 0 var(--black);
+      font-size: 0.8rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transform: rotate(-2deg);
     }
 
-    .track h3 {
-      margin-bottom: 8px;
+    .hero h1 {
+      margin: 0;
+      max-width: 740px;
+      font-size: clamp(4rem, 11vw, 8.5rem);
+      line-height: 0.78;
+      letter-spacing: -8px;
+      text-transform: lowercase;
     }
 
-    .track p {
-      margin: 0 0 15px;
-      color: #555;
+    .hero h1 span {
+      display: block;
+      color: var(--pink);
+      -webkit-text-stroke: 3px var(--black);
+      text-shadow: 7px 7px 0 var(--purple);
     }
 
-    audio {
+    .hero-description {
+      max-width: 620px;
+      margin: 30px 0 0;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 20px;
+      border: var(--border);
+      box-shadow: 5px 5px 0 var(--black);
+      font-weight: 900;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: 0.15s ease;
+    }
+
+    .button:hover {
+      box-shadow: 2px 2px 0 var(--black);
+      transform: translate(3px, 3px);
+    }
+
+    .button-primary {
+      background: var(--pink);
+      color: white;
+    }
+
+    .button-secondary {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .hero-art {
+      position: relative;
+    }
+
+    .hero-image-frame {
+      position: relative;
+      min-height: 540px;
+      overflow: hidden;
+      border: var(--border);
+      border-radius: 46% 46% 10px 10px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.7),
+          rgba(125, 77, 255, 0.18)
+        ),
+        var(--pink);
+      box-shadow: 12px 12px 0 var(--black);
+      transform: rotate(2deg);
+    }
+
+    .hero-image-frame img {
       width: 100%;
+      height: 100%;
+      min-height: 540px;
+      object-fit: cover;
     }
 
-    .process-list {
-      padding-left: 22px;
+    .image-placeholder {
+      width: 100%;
+      min-height: 540px;
+      display: grid;
+      place-items: center;
+      padding: 30px;
+      text-align: center;
     }
 
-    .process-list li {
-      margin-bottom: 12px;
+    .image-placeholder strong {
+      display: block;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1;
+      text-transform: uppercase;
     }
 
-    .terms {
+    .image-placeholder small {
+      display: block;
+      margin-top: 14px;
+      font-weight: bold;
+    }
+
+    .sticker {
+      position: absolute;
+      z-index: 2;
+      padding: 12px 15px;
+      border: 2px solid var(--black);
+      background: var(--yellow);
+      box-shadow: 4px 4px 0 var(--black);
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .sticker-one {
+      top: -24px;
+      right: -20px;
+      transform: rotate(8deg);
+    }
+
+    .sticker-two {
+      bottom: 38px;
+      left: -30px;
+      background: var(--purple);
+      color: white;
+      transform: rotate(-7deg);
+    }
+
+    .section {
+      padding: 90px 0;
+      scroll-margin-top: 90px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 36px;
+      border-bottom: var(--border);
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(2.6rem, 7vw, 5.5rem);
+      line-height: 0.9;
+      letter-spacing: -4px;
+      text-transform: lowercase;
+    }
+
+    .section-heading p {
+      max-width: 460px;
+      margin: 0 0 12px;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    .featured-episode {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      border: var(--border);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .featured-media {
+      min-height: 430px;
+      border-right: var(--border);
+      background: var(--black);
+    }
+
+    .featured-media img,
+    .featured-media iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      border: 0;
+      object-fit: cover;
+    }
+
+    .video-placeholder {
+      min-height: 430px;
+      display: grid;
+      place-items: center;
+      padding: 30px;
+      color: white;
+      text-align: center;
+      background:
+        repeating-linear-gradient(
+          -45deg,
+          #17131b,
+          #17131b 14px,
+          #211926 14px,
+          #211926 28px
+        );
+    }
+
+    .play-icon {
+      width: 86px;
+      height: 86px;
+      margin: auto auto 20px;
+      display: grid;
+      place-items: center;
+      border: 3px solid white;
+      border-radius: 50%;
+      background: var(--pink);
+      font-size: 2rem;
+    }
+
+    .featured-info {
+      padding: clamp(28px, 5vw, 56px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .episode-number {
+      color: var(--pink);
+      font-size: 0.85rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .featured-info h3 {
+      margin: 10px 0 18px;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 0.95;
+      letter-spacing: -2px;
+    }
+
+    .featured-info p {
+      margin: 0 0 28px;
+      line-height: 1.7;
+    }
+
+    .episode-grid,
+    .comic-grid,
+    .cast-grid,
+    .update-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .episode-card,
+    .comic-card,
+    .character-card,
+    .update-card {
+      overflow: hidden;
+      border: var(--border);
+      background: var(--white);
+      box-shadow: 5px 5px 0 var(--black);
+      transition: 0.15s ease;
+    }
+
+    .episode-card:hover,
+    .comic-card:hover,
+    .character-card:hover,
+    .update-card:hover {
+      box-shadow: 10px 10px 0 var(--pink);
+      transform: translate(-3px, -3px);
+    }
+
+    .card-image {
+      aspect-ratio: 16 / 10;
+      border-bottom: var(--border);
+      background: var(--light-pink);
+      overflow: hidden;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.25s ease;
+    }
+
+    .episode-card:hover .card-image img,
+    .comic-card:hover .card-image img {
+      transform: scale(1.04);
+    }
+
+    .card-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 220px;
+      display: grid;
+      place-items: center;
       padding: 20px;
-      border: 1px solid #ccc;
-      background: #fafafa;
+      background:
+        linear-gradient(
+          135deg,
+          var(--light-pink),
+          #c9b7ff
+        );
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
     }
 
-    .terms p {
-      margin-top: 0;
+    .card-content {
+      padding: 22px;
+    }
+
+    .card-content h3 {
+      margin: 6px 0 10px;
+      font-size: 1.45rem;
+    }
+
+    .card-content p {
+      margin: 0;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    .card-link {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--dark-pink);
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .comic-card .card-image {
+      aspect-ratio: 4 / 5;
+    }
+
+    .comic-card:nth-child(2) {
+      transform: translateY(25px);
+    }
+
+    .comic-card:nth-child(2):hover {
+      transform: translate(-3px, 22px);
+    }
+
+    .character-card {
+      position: relative;
+    }
+
+    .character-image {
+      aspect-ratio: 4 / 5;
+      border-bottom: var(--border);
+      overflow: hidden;
+      background: var(--pink);
+    }
+
+    .character-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .character-card:nth-child(2) .character-image {
+      background: var(--purple);
+    }
+
+    .character-card:nth-child(3) .character-image {
+      background: var(--yellow);
+    }
+
+    .character-info {
+      padding: 22px;
+    }
+
+    .character-info h3 {
+      margin: 0;
+      font-size: 1.8rem;
+      text-transform: lowercase;
+    }
+
+    .character-role {
+      display: block;
+      margin: 5px 0 12px;
+      color: var(--dark-pink);
+      font-size: 0.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .character-info p {
+      margin: 0;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    .about-panel {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      border: var(--border);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .about-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 420px;
+      padding: 40px;
+      border-right: var(--border);
+      background: var(--pink);
+      color: white;
+      text-align: center;
+    }
+
+    .about-title h2 {
+      margin: 0;
+      font-size: clamp(3rem, 8vw, 7rem);
+      line-height: 0.8;
+      letter-spacing: -5px;
+      text-transform: lowercase;
+      transform: rotate(-5deg);
+    }
+
+    .about-content {
+      padding: clamp(32px, 7vw, 72px);
+    }
+
+    .about-content p {
+      margin: 0 0 20px;
+      font-size: 1.08rem;
+      line-height: 1.8;
+    }
+
+    .about-list {
+      margin: 30px 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .about-list li {
+      padding: 12px 0;
+      border-bottom: 2px dashed var(--black);
+      font-weight: bold;
+    }
+
+    .update-card {
+      padding: 24px;
+    }
+
+    .update-date {
+      color: var(--dark-pink);
+      font-size: 0.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .update-card h3 {
+      margin: 9px 0;
+      font-size: 1.35rem;
+    }
+
+    .update-card p {
+      margin: 0;
+      color: var(--gray);
+      line-height: 1.6;
     }
 
     .contact-box {
-      padding: 25px;
-      border: 1px solid #bbb;
-      background: #f7f7f7;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .contact-links a {
-      display: inline-block;
-      padding: 9px 15px;
-      border: 1px solid #111;
-      background: white;
-      text-decoration: none;
-    }
-
-    .contact-links a:hover {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 30px;
+      padding: clamp(32px, 7vw, 70px);
+      border: var(--border);
+      background: var(--purple);
       color: white;
-      background: #111;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box h2 {
+      margin: 0 0 14px;
+      font-size: clamp(2.8rem, 7vw, 6rem);
+      line-height: 0.85;
+      letter-spacing: -4px;
+      text-transform: lowercase;
+    }
+
+    .contact-box p {
+      max-width: 650px;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .social-links a {
+      min-width: 180px;
+      padding: 13px 18px;
+      border: 3px solid var(--black);
+      background: var(--white);
+      color: var(--black);
+      box-shadow: 4px 4px 0 var(--black);
+      font-weight: 900;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .social-links a:hover {
+      background: var(--yellow);
     }
 
     footer {
-      padding: 30px 0;
-      background: #f4f4f4;
-      color: #555;
-      text-align: center;
-      font-size: 0.9rem;
+      margin-top: 100px;
+      border-top: var(--border);
+      background: var(--black);
+      color: white;
     }
 
-    @media (max-width: 700px) {
-      .container {
-        width: min(100% - 24px, 950px);
+    .footer-inner {
+      width: min(1200px, calc(100% - 32px));
+      margin: auto;
+      padding: 38px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .footer-inner p {
+      margin: 0;
+    }
+
+    .back-to-top {
+      color: var(--yellow);
+      font-weight: bold;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .menu-button {
+        display: block;
       }
 
-      header {
-        padding: 40px 0 30px;
+      .nav-links {
+        position: absolute;
+        top: 74px;
+        left: 0;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        border-bottom: var(--border);
+        background: var(--white);
       }
 
-      header h1 {
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 16px 24px;
+        border-top: 1px solid #ddd;
+      }
+
+      .hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        padding: 55px 0 80px;
+      }
+
+      .hero h1 {
+        letter-spacing: -5px;
+      }
+
+      .hero-art {
+        max-width: 650px;
+        margin: auto;
+      }
+
+      .featured-episode,
+      .about-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-media,
+      .about-title {
+        border-right: 0;
+        border-bottom: var(--border);
+      }
+
+      .episode-grid,
+      .comic-grid,
+      .cast-grid,
+      .update-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .comic-card:nth-child(2),
+      .comic-card:nth-child(2):hover {
+        transform: none;
+      }
+
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .social-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 620px) {
+      main,
+      .nav,
+      .footer-inner {
+        width: min(100% - 20px, 1200px);
+      }
+
+      .nav {
+        min-height: 64px;
+      }
+
+      .nav-links {
+        top: 64px;
+      }
+
+      .hero {
+        gap: 42px;
+        padding-top: 42px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.5rem, 20vw, 6rem);
+        letter-spacing: -4px;
+      }
+
+      .hero h1 span {
+        -webkit-text-stroke: 2px var(--black);
+        text-shadow: 4px 4px 0 var(--purple);
+      }
+
+      .hero-image-frame,
+      .hero-image-frame img,
+      .image-placeholder {
+        min-height: 430px;
+      }
+
+      .sticker {
+        font-size: 0.75rem;
+      }
+
+      .sticker-one {
+        right: -6px;
+      }
+
+      .sticker-two {
+        left: -6px;
+      }
+
+      .section {
+        padding: 68px 0;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-heading h2 {
+        margin-bottom: 18px;
         letter-spacing: -2px;
       }
 
-      nav .container {
-        gap: 15px;
-      }
-
-      section {
-        padding: 40px 0;
-      }
-
-      .about-grid,
-      .music-grid {
+      .episode-grid,
+      .comic-grid,
+      .cast-grid,
+      .update-grid {
         grid-template-columns: 1fr;
       }
 
-      .service {
-        grid-template-columns: 1fr;
-        gap: 8px;
+      .featured-media,
+      .featured-media img,
+      .featured-media iframe,
+      .video-placeholder {
+        min-height: 270px;
       }
 
-      .price {
-        white-space: normal;
+      .about-title {
+        min-height: 260px;
+      }
+
+      .hero-buttons,
+      .social-links {
+        flex-direction: column;
+      }
+
+      .button,
+      .social-links a {
+        width: 100%;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .announcement-track {
+        animation: none;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
       }
     }
   </style>
 </head>
 
-<body>
-  <header id="top">
-    <div class="container">
-      <h1>kekgirl.lol</h1>
+<body id="top">
 
-      <p>
-        custom beats, instrumentals, music production and audio commissions.
-      </p>
+  <div class="announcement">
+    <div class="announcement-track">
+      <span>new episodes and comic pages coming soon ★ welcome to jptwintails ★</span>
+      <span>new episodes and comic pages coming soon ★ welcome to jptwintails ★</span>
+      <span>new episodes and comic pages coming soon ★ welcome to jptwintails ★</span>
+      <span>new episodes and comic pages coming soon ★ welcome to jptwintails ★</span>
     </div>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="logo" href="#top">jp<span>twintails</span></a>
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#episodes">episodes</a></li>
+        <li><a href="#comic">comic</a></li>
+        <li><a href="#cast">cast</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#updates">updates</a></li>
+        <li><a href="#contact">links</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav>
-    <div class="container">
-      <a href="#about">about</a>
-      <a href="#services">services</a>
-      <a href="#examples">examples</a>
-      <a href="#process">process</a>
-      <a href="#terms">terms</a>
-      <a href="#contact">contact</a>
-    </div>
-  </nav>
-
   <main>
-    <section id="about">
-      <div class="container">
-        <h2>about</h2>
 
-        <div class="about-grid">
-          <div>
-            <p>
-              i produce custom music for artists, vocalists, games, videos,
-              websites and personal projects.
-            </p>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">original webcomic + webseries</p>
 
-            <p>
-              i mainly work with breakcore, hyperpop, electronic, ambient,
-              experimental and internet-inspired music, but i am open to
-              other styles.
-            </p>
+        <h1>
+          jp
+          <span>twintails</span>
+        </h1>
 
-            <p>
-              every commission is made specifically for the client. you can
-              provide references, a mood, a genre, a tempo or a general idea.
-            </p>
-          </div>
-
-          <img
-            class="profile-image"
-            src="assets/profile.jpg"
-            alt="kekgirl profile image"
-          >
-        </div>
-      </div>
-    </section>
-
-    <section id="services">
-      <div class="container">
-        <h2>music commissions</h2>
-
-        <div class="service-list">
-          <article class="service">
-            <div>
-              <h3>custom beat</h3>
-
-              <p>
-                a complete original beat based on your genre, references
-                and preferred mood.
-              </p>
-            </div>
-
-            <div class="price">starting at $25</div>
-          </article>
-
-          <article class="service">
-            <div>
-              <h3>full instrumental</h3>
-
-              <p>
-                a longer and more detailed instrumental with arrangement,
-                transitions and multiple sections.
-              </p>
-            </div>
-
-            <div class="price">starting at $40</div>
-          </article>
-
-          <article class="service">
-            <div>
-              <h3>game or website music</h3>
-
-              <p>
-                loops, menu music, background tracks, character themes or
-                short soundtrack pieces.
-              </p>
-            </div>
-
-            <div class="price">starting at $30</div>
-          </article>
-
-          <article class="service">
-            <div>
-              <h3>intro or outro music</h3>
-
-              <p>
-                a short original track for videos, streams, podcasts or
-                social media content.
-              </p>
-            </div>
-
-            <div class="price">starting at $15</div>
-          </article>
-
-          <article class="service">
-            <div>
-              <h3>mixing</h3>
-
-              <p>
-                volume balancing, basic cleanup, effects and final mix
-                adjustments for your song.
-              </p>
-            </div>
-
-            <div class="price">starting at $20</div>
-          </article>
-
-          <article class="service">
-            <div>
-              <h3>custom request</h3>
-
-              <p>
-                contact me for unusual projects, larger soundtracks,
-                collaborations or other audio work.
-              </p>
-            </div>
-
-            <div class="price">custom quote</div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="examples">
-      <div class="container">
-        <h2>examples</h2>
-
-        <p>
-          replace these audio files with your own songs or commission examples.
+        <p class="hero-description">
+          An original story told through comics, animation, character art,
+          music, and strange internet energy. Enter the world of jptwintails
+          and meet the characters causing all the problems.
         </p>
 
-        <div class="music-grid">
-          <article class="track">
-            <h3>breakcore example</h3>
+        <div class="hero-buttons">
+          <a class="button button-primary" href="#comic">
+            read the comic
+          </a>
 
-            <p>fast drums, distorted samples and electronic melodies.</p>
-
-            <audio controls>
-              <source
-                src="assets/music/breakcore-example.mp3"
-                type="audio/mpeg"
-              >
-            </audio>
-          </article>
-
-          <article class="track">
-            <h3>hyperpop example</h3>
-
-            <p>bright synths, heavy bass and energetic production.</p>
-
-            <audio controls>
-              <source
-                src="assets/music/hyperpop-example.mp3"
-                type="audio/mpeg"
-              >
-            </audio>
-          </article>
-
-          <article class="track">
-            <h3>ambient example</h3>
-
-            <p>soft background music for games, videos or websites.</p>
-
-            <audio controls>
-              <source
-                src="assets/music/ambient-example.mp3"
-                type="audio/mpeg"
-              >
-            </audio>
-          </article>
-
-          <article class="track">
-            <h3>experimental example</h3>
-
-            <p>unusual sound design, textures and abstract arrangement.</p>
-
-            <audio controls>
-              <source
-                src="assets/music/experimental-example.mp3"
-                type="audio/mpeg"
-              >
-            </audio>
-          </article>
+          <a class="button button-secondary" href="#episodes">
+            watch episodes
+          </a>
         </div>
       </div>
-    </section>
 
-    <section id="process">
-      <div class="container">
-        <h2>commission process</h2>
+      <div class="hero-art">
+        <div class="sticker sticker-one">new series!</div>
 
-        <ol class="process-list">
-          <li>
-            contact me with your idea, genre, references, budget and deadline.
-          </li>
+        <div class="hero-image-frame">
+          <!--
+          Replace the placeholder below with:
 
-          <li>
-            i will confirm whether i can complete the project and provide a
-            final price.
-          </li>
+          <img
+            src="assets/hero-art.png"
+            alt="jptwintails main characters"
+          >
+          -->
 
-          <li>
-            payment is sent before i begin working unless we agree on another
-            arrangement.
-          </li>
-
-          <li>
-            i will send a preview or work-in-progress version for feedback.
-          </li>
-
-          <li>
-            after revisions are finished, you will receive the final audio
-            files.
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <section id="terms">
-      <div class="container">
-        <h2>terms</h2>
-
-        <div class="terms">
-          <p>
-            commissions include up to two reasonable revisions unless stated
-            otherwise.
-          </p>
-
-          <p>
-            major changes requested after the original idea has been approved
-            may cost extra.
-          </p>
-
-          <p>
-            commercial use must be discussed before the commission begins.
-          </p>
-
-          <p>
-            clients may not claim that they personally produced the music.
-          </p>
-
-          <p>
-            i may share finished work in my portfolio unless private work is
-            agreed on beforehand.
-          </p>
-
-          <p>
-            refunds are not available after significant work has been
-            completed.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <h2>contact</h2>
-
-        <div class="contact-box">
-          <p>
-            when contacting me, include the type of commission, your budget,
-            your deadline and two or three music references.
-          </p>
-
-          <div class="contact-links">
-            <a href="https://discord.com" target="_blank">
-              discord: @febcel
-            </a>
-
-            <a href="mailto:your@email.com">
-              email
-            </a>
-
-            <a href="#" target="_blank">
-              soundcloud
-            </a>
-
-            <a href="#" target="_blank">
-              bandcamp
-            </a>
-
-            <a href="#" target="_blank">
-              spotify
-            </a>
+          <div class="image-placeholder">
+            <div>
+              <strong>main character art</strong>
+              <small>replace this with assets/hero-art.png</small>
+            </div>
           </div>
         </div>
+
+        <div class="sticker sticker-two">made on the internet</div>
       </div>
     </section>
+
+    <section class="section" id="episodes">
+      <div class="section-heading">
+        <h2>webseries</h2>
+
+        <p>
+          Watch the animated story, shorts, trailers, music videos, and
+          behind-the-scenes uploads.
+        </p>
+      </div>
+
+      <article class="featured-episode">
+        <div class="featured-media">
+          <!--
+          You can replace this placeholder with a YouTube embed:
+
+          <iframe
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+            title="jptwintails episode 1"
+            allowfullscreen
+          ></iframe>
+          -->
+
+          <div class="video-placeholder">
+            <div>
+              <div class="play-icon">▶</div>
+              <strong>featured episode video</strong>
+              <p>paste your YouTube embed here</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="featured-info">
+          <span class="episode-number">episode 01</span>
+
+          <h3>the beginning of something weird</h3>
+
+          <p>
+            Introduce your first episode here. Write a short description
+            explaining what happens without giving away too much.
+          </p>
+
+          <a
+            class="button button-primary"
+            href="https://youtube.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            watch now
+          </a>
+        </div>
+      </article>
+
+      <div class="episode-grid" style="margin-top: 34px;">
+
+        <article class="episode-card">
+          <div class="card-image">
+            <div class="card-placeholder">episode thumbnail 02</div>
+          </div>
+
+          <div class="card-content">
+            <span class="episode-number">episode 02</span>
+            <h3>an extremely normal afternoon</h3>
+            <p>
+              Add a small description of the episode or animated short.
+            </p>
+            <a class="card-link" href="#">watch episode →</a>
+          </div>
+        </article>
+
+        <article class="episode-card">
+          <div class="card-image">
+            <div class="card-placeholder">episode thumbnail 03</div>
+          </div>
+
+          <div class="card-content">
+            <span class="episode-number">episode 03</span>
+            <h3>do not answer the phone</h3>
+            <p>
+              Add a small description of the episode or animated short.
+            </p>
+            <a class="card-link" href="#">watch episode →</a>
+          </div>
+        </article>
+
+        <article class="episode-card">
+          <div class="card-image">
+            <div class="card-placeholder">bonus video</div>
+          </div>
+
+          <div class="card-content">
+            <span class="episode-number">bonus</span>
+            <h3>character animation test</h3>
+            <p>
+              Use this card for trailers, music videos, shorts, or extras.
+            </p>
+            <a class="card-link" href="#">watch video →</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section" id="comic">
+      <div class="section-heading">
+        <h2>webcomic</h2>
+
+        <p>
+          Read the newest chapters online. New pages can be added as individual
+          cards or linked to a separate comic reader.
+        </p>
+      </div>
+
+      <div class="comic-grid">
+
+        <article class="comic-card">
+          <div class="card-image">
+            <div class="card-placeholder">chapter cover 01</div>
+          </div>
+
+          <div class="card-content">
+            <span class="episode-number">chapter 01</span>
+            <h3>start here</h3>
+            <p>
+              The first chapter of jptwintails. Introduce the world and cast.
+            </p>
+            <a class="card-link" href="#">read chapter →</a>
+          </div>
+        </article>
+
+        <article class="comic-card">
+          <div class="card-image">
+            <div class="card-placeholder">chapter cover 02</div>
+          </div>
+
+          <div class="card-content">
+            <span class="episode-number">chapter 02</span>
+            <h3>after school</h3>
+            <p>
+              Add a quick teaser for this chapter without spoiling the ending.
+            </p>
+            <a class="card-link" href="#">read chapter →</a>
+          </div>
+        </article>
+
+        <article class="comic-card">
+          <div class="card-image">
+            <div class="card-placeholder">chapter cover 03</div>
+          </div>
+
+          <div class="card-content">
+            <span class="episode-number">chapter 03</span>
+            <h3>the broken tape</h3>
+            <p>
+              Add another chapter description or mark the chapter as upcoming.
+            </p>
+            <a class="card-link" href="#">coming soon →</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section" id="cast">
+      <div class="section-heading">
+        <h2>cast</h2>
+
+        <p>
+          Meet the characters of jptwintails. Replace these placeholders with
+          character portraits and descriptions.
+        </p>
+      </div>
+
+      <div class="cast-grid">
+
+        <article class="character-card">
+          <div class="character-image">
+            <div class="card-placeholder">character portrait</div>
+          </div>
+
+          <div class="character-info">
+            <h3>character one</h3>
+            <span class="character-role">main character</span>
+            <p>
+              Write their personality, role in the story, likes, dislikes,
+              and one suspicious fact.
+            </p>
+          </div>
+        </article>
+
+        <article class="character-card">
+          <div class="character-image">
+            <div class="card-placeholder">character portrait</div>
+          </div>
+
+          <div class="character-info">
+            <h3>character two</h3>
+            <span class="character-role">best friend?</span>
+            <p>
+              Write their personality, relationship to the protagonist,
+              and what they are hiding.
+            </p>
+          </div>
+        </article>
+
+        <article class="character-card">
+          <div class="character-image">
+            <div class="card-placeholder">character portrait</div>
+          </div>
+
+          <div class="character-info">
+            <h3>character three</h3>
+            <span class="character-role">unknown entity</span>
+            <p>
+              Write a vague and mysterious description that makes visitors
+              want to learn more.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="about-panel">
+        <div class="about-title">
+          <h2>about the project</h2>
+        </div>
+
+        <div class="about-content">
+          <p>
+            <strong>jptwintails</strong> is an independent webcomic and
+            webseries project created online. The story can combine animation,
+            illustration, music, comedy, drama, horror, or whatever direction
+            you want the series to take.
+          </p>
+
+          <p>
+            Use this section to explain when the project began, what inspired
+            it, who works on it, and where people can follow its development.
+          </p>
+
+          <ul class="about-list">
+            <li>created, written, and illustrated independently</li>
+            <li>original characters and story</li>
+            <li>new comic pages and episodes released online</li>
+            <li>character art, music, extras, and behind-the-scenes posts</li>
+          </ul>
+
+          <a class="button button-primary" href="#contact">
+            follow the project
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="updates">
+      <div class="section-heading">
+        <h2>updates</h2>
+
+        <p>
+          Post production news, new character reveals, episode announcements,
+          and comic release dates here.
+        </p>
+      </div>
+
+      <div class="update-grid">
+
+        <article class="update-card">
+          <span class="update-date">july 2026</span>
+          <h3>the official site is live</h3>
+          <p>
+            Welcome to the official home of the jptwintails webcomic and
+            webseries.
+          </p>
+        </article>
+
+        <article class="update-card">
+          <span class="update-date">coming soon</span>
+          <h3>first comic chapter</h3>
+          <p>
+            The opening chapter is currently being drawn and prepared for
+            release.
+          </p>
+        </article>
+
+        <article class="update-card">
+          <span class="update-date">in production</span>
+          <h3>episode one</h3>
+          <p>
+            Storyboarding, animation, editing, and music production are
+            underway.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="contact-box">
+        <div>
+          <h2>follow jptwintails</h2>
+
+          <p>
+            Keep up with new chapters, episodes, artwork, animations, and
+            production updates across the official project pages.
+          </p>
+        </div>
+
+        <div class="social-links">
+          <a
+            href="https://youtube.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            youtube
+          </a>
+
+          <a
+            href="https://instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            instagram
+          </a>
+
+          <a
+            href="https://tiktok.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            tiktok
+          </a>
+
+          <a href="mailto:your@email.com">
+            email
+          </a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
-    <div class="container">
-      <p>© 2026 kekgirl.lol</p>
-      <p><a href="#top">back to top</a></p>
+    <div class="footer-inner">
+      <p>
+        © 2026 jptwintails. all characters and artwork belong to their creator.
+      </p>
+
+      <a class="back-to-top" href="#top">
+        back to top ↑
+      </a>
     </div>
   </footer>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+    const navigationLinks = navLinks.querySelectorAll("a");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.textContent = isOpen ? "×" : "☰";
+    });
+
+    navigationLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.textContent = "☰";
+      });
+    });
+  </script>
+
 </body>
 </html>
