@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>jptwintails.site — kekgirl</title>
+  <meta name="description" content="kekgirl — independent skate clothing from jptwintails.site.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ticker">kekgirl / independent skate clothing / jptwintails.site / drop 001 soon /</div>
+
+  <header class="site-header">
+    <a class="logo" href="index.html">kekgirl</a>
+    <button class="menu-button" aria-label="open menu">menu</button>
+    <nav>
+      <a href="#shop">shop</a>
+      <a href="#lookbook">lookbook</a>
+      <a href="#about">about</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">jptwintails.site presents</p>
+        <h1>kekgirl</h1>
+        <p class="hero-text">skate clothes for people who spend too much time outside and online.</p>
+        <a class="button" href="#shop">view drop 001</a>
+      </div>
+      <div class="hero-art" aria-label="kekgirl skate graphic">
+        <div class="scribble">KG</div>
+        <div class="deck"></div>
+        <div class="girl">☆</div>
+        <span class="stamp">NOT<br>PRO</span>
+      </div>
+    </section>
+
+    <section id="shop" class="section">
+      <div class="section-title">
+        <span>01</span><h2>shop</h2><span>drop 001</span>
+      </div>
+      <div class="products">
+        <article class="product">
+          <div class="product-image tee"><span>kekgirl</span></div>
+          <div class="product-info"><h3>kekgirl tee 001</h3><p>heavyweight cotton / black</p><strong>$35.00</strong></div>
+        </article>
+        <article class="product">
+          <div class="product-image hoodie"><span>KG<br>SKATE<br>DIVISION</span></div>
+          <div class="product-info"><h3>skate division hoodie</h3><p>oversized fleece / washed charcoal</p><strong>$68.00</strong></div>
+        </article>
+        <article class="product">
+          <div class="product-image cap"><span>KG</span></div>
+          <div class="product-info"><h3>kg six panel</h3><p>cotton twill / embroidered logo</p><strong>$30.00</strong></div>
+        </article>
+      </div>
+      <p class="coming">drop 001 is currently being made. sign up below for the release.</p>
+    </section>
+
+    <section id="lookbook" class="lookbook section">
+      <div class="section-title"><span>02</span><h2>lookbook</h2><span>summer 2026</span></div>
+      <div class="look-grid">
+        <div class="look look-a"><span>kick / push / repeat</span></div>
+        <div class="look look-b"><span>kekgirl skate division</span></div>
+        <div class="look look-c"><span>made for the pavement</span></div>
+      </div>
+    </section>
+
+    <section id="about" class="about section">
+      <div class="section-title"><span>03</span><h2>about</h2><span>jptwintails.site</span></div>
+      <div class="about-grid">
+        <h2>not a big company.<br>just a girl and a board.</h2>
+        <div>
+          <p>kekgirl is an independent skate clothing project built around graphics, weird clothes, skating, music, and internet culture.</p>
+          <p>small runs. limited drops. no fake luxury bullshit.</p>
+          <p>designed and released through <b>jptwintails.site</b>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="signup section">
+      <div>
+        <p class="eyebrow">don't miss the drop</p>
+        <h2>get on the list.</h2>
+      </div>
+      <form onsubmit="event.preventDefault(); this.querySelector('.status').textContent='you are on the list.';">
+        <input type="email" placeholder="your email" required>
+        <button type="submit">sign me up</button>
+        <small class="status"></small>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 kekgirl</span>
+    <a href="index.html">jptwintails.site</a>
+    <span>made for skating</span>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
