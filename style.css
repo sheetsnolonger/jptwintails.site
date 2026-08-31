@@ -2,11 +2,12 @@
 
 :root {
   --black: #080808;
-  --white: #e8e4db;
+  --white: #f2eeee;
   --red: #d71919;
-  --gray: #77736b;
-  --border: #aaa59b;
-  --dark-border: #303030;
+  --dark-red: #9f1010;
+  --gray: #8b7777;
+  --border: #3a1717;
+  --dark-border: #241010;
 }
 
 * {
@@ -19,8 +20,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--white);
-  color: var(--black);
+  background: var(--black);
+  color: var(--white);
   font-family: "IBM Plex Mono", monospace;
   font-size: 13px;
   line-height: 1.5;
@@ -55,11 +56,11 @@ a {
   background: var(--black);
   color: #fff;
 
-  border-bottom: 1px solid #292929;
+  border-bottom: 1px solid var(--dark-border);
 }
 
 .logo {
-  color: #fff;
+  color: var(--red);
   text-decoration: none;
 
   font-size: 17px;
@@ -75,7 +76,7 @@ a {
 }
 
 .main-nav a {
-  color: #888;
+  color: #765f5f;
 
   text-decoration: none;
 
@@ -87,7 +88,7 @@ a {
 
 .main-nav a:hover,
 .main-nav a.active {
-  color: #fff;
+  color: var(--red);
 }
 
 
@@ -128,7 +129,7 @@ a {
 .eyebrow {
   margin: 0 0 14px;
 
-  color: var(--gray);
+  color: var(--red);
 
   font-size: 9px;
   font-weight: 600;
@@ -170,7 +171,7 @@ h2 {
 
   margin: 28px 0;
 
-  color: #55514b;
+  color: #9a8585;
 
   font-size: 12px;
 }
@@ -203,18 +204,19 @@ h2 {
 }
 
 .button:hover {
-  background: var(--black);
-  border-color: var(--black);
+  background: #fff;
+  border-color: #fff;
+  color: var(--black);
 }
 
 .button.outline {
   background: transparent;
-  color: var(--black);
-  border-color: var(--black);
+  color: var(--red);
+  border-color: var(--red);
 }
 
 .button.outline:hover {
-  background: var(--black);
+  background: var(--red);
   color: #fff;
 }
 
@@ -241,13 +243,13 @@ h2 {
 
   position: relative;
 
-  background: var(--black);
+  background: var(--red);
 
   border-radius: 45px;
 
   transform: rotate(8deg);
 
-  box-shadow: 14px 14px 0 var(--red);
+  box-shadow: 14px 14px 0 #fff;
 }
 
 .board::before,
@@ -264,7 +266,7 @@ h2 {
 
   border-radius: 50%;
 
-  background: #555;
+  background: #4a1717;
 }
 
 .board::before {
@@ -280,6 +282,8 @@ h2 {
 
   top: 10px;
   left: 20px;
+
+  color: var(--red);
 
   font-size: 9px;
   font-weight: 600;
@@ -341,7 +345,7 @@ h2 {
 
   margin: 0;
 
-  color: #57534d;
+  color: #9a8585;
 
   font-size: 11px;
 }
@@ -356,7 +360,7 @@ h2 {
 }
 
 .section.dark {
-  background: var(--black);
+  background: #050505;
   color: #fff;
 }
 
@@ -386,7 +390,7 @@ h2 {
 }
 
 .dark .section-title > p {
-  color: #777;
+  color: #765f5f;
 }
 
 
@@ -404,9 +408,9 @@ h2 {
 
   background: transparent;
 
-  border: 1px solid var(--black);
+  border: 1px solid var(--red);
 
-  color: var(--black);
+  color: var(--red);
 
   text-decoration: none;
   text-transform: uppercase;
@@ -417,7 +421,7 @@ h2 {
 
 .filter:hover,
 .filter.active {
-  background: var(--black);
+  background: var(--red);
   color: #fff;
 }
 
@@ -450,7 +454,7 @@ h2 {
 }
 
 .home-card span {
-  color: var(--gray);
+  color: var(--red);
 
   font-size: 9px;
 }
@@ -465,20 +469,20 @@ h2 {
 }
 
 .home-card small {
-  color: var(--gray);
+  color: #765f5f;
 
   font-size: 9px;
   text-transform: uppercase;
 }
 
 .home-card:hover {
-  background: var(--black);
+  background: var(--red);
   color: #fff;
 }
 
 .home-card:hover small,
 .home-card:hover span {
-  color: #888;
+  color: #fff;
 }
 
 
@@ -507,7 +511,7 @@ h2 {
 }
 
 .card small {
-  color: var(--gray);
+  color: var(--red);
 
   font-size: 8px;
 
@@ -525,7 +529,7 @@ h2 {
 .card p {
   margin: 0 0 20px;
 
-  color: #57534d;
+  color: #9a8585;
 
   font-size: 10px;
 }
@@ -542,8 +546,8 @@ h2 {
   display: inline-flex;
   align-items: center;
 
-  background: var(--black);
-  border: 1px solid var(--black);
+  background: var(--red);
+  border: 1px solid var(--red);
 
   color: #fff;
 
@@ -555,8 +559,9 @@ h2 {
 }
 
 .card-button:hover {
-  background: var(--red);
-  border-color: var(--red);
+  background: #fff;
+  border-color: #fff;
+  color: #000;
 }
 
 
@@ -582,7 +587,7 @@ h2 {
 }
 
 .list-item .num {
-  color: #666;
+  color: var(--red);
 
   font-size: 9px;
 }
@@ -598,21 +603,21 @@ h2 {
 .list-item p {
   margin: 4px 0 0;
 
-  color: #777;
+  color: #765f5f;
 
   font-size: 9px;
 }
 
 .dark .card-button {
-  background: #fff;
-  border-color: #fff;
-  color: #000;
-}
-
-.dark .card-button:hover {
   background: var(--red);
   border-color: var(--red);
   color: #fff;
+}
+
+.dark .card-button:hover {
+  background: #fff;
+  border-color: #fff;
+  color: #000;
 }
 
 
@@ -653,7 +658,7 @@ h2 {
 }
 
 .trick span {
-  color: #5b5750;
+  color: #765f5f;
 
   font-size: 9px;
 }
@@ -667,7 +672,7 @@ h2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
-  border-top: 1px solid #241b1b;
+  border-top: 1px solid #241010;
 }
 
 .resource-card {
@@ -680,11 +685,13 @@ h2 {
 
   text-decoration: none;
 
-  border-bottom: 1px solid #241b1b;
+  border-bottom: 1px solid #241010;
 }
 
 .resource-card span {
   grid-row: 1 / 3;
+
+  color: var(--red);
 
   font-size: 9px;
 }
@@ -703,7 +710,7 @@ h2 {
 }
 
 .resource-card:hover {
-  background: var(--black);
+  background: var(--red);
   color: #fff;
 }
 
@@ -759,8 +766,8 @@ footer {
 
   gap: 20px;
 
-  background: var(--black);
-  color: #777;
+  background: #050505;
+  color: #765f5f;
 
   font-size: 8px;
 
@@ -768,13 +775,13 @@ footer {
 }
 
 footer a {
-  color: #fff;
+  color: var(--red);
 
   text-decoration: none;
 }
 
 footer a:hover {
-  color: var(--red);
+  color: #fff;
 }
 
 
